@@ -1,0 +1,147 @@
+@import 'setup/variables';
+
+// ======================
+// = ACF - Sekcje
+// ======================
+.admin-panel {
+    &__section {
+        color: #fff;
+        background-color: #363b3f;
+
+        &--lite {
+            background-color: #50585d;
+        }
+
+        &--ultra-lite {
+            background-color: #858c91;
+        }
+
+        &--uber-lite {
+            background-color: #b7b9bb;
+        }
+
+        &--small {
+            padding-top: 5px !important;
+            padding-bottom: 5px !important;
+        }
+
+        .acf-label {
+            margin-bottom: 0 !important;
+
+            label {
+                margin-bottom: 0 !important;
+            }
+        }
+    }
+
+    &__hide-label {
+        > .acf-label {
+            label {
+                display: none;
+            }
+        }
+    }
+}
+
+// ======================
+// = Tabela
+// ======================
+.wp-list-table {
+    tr {
+        th.column-game_platform {
+            width: 225px;
+        }
+
+        th.column-game_master {
+            width: 200px;
+        }
+
+        th.column-has_visited {
+            width: 180px;
+        }
+
+        td.column-game_platform,
+        td.column-has_visited {
+            vertical-align: middle;
+
+            span {
+                display: inline-block;
+                height: 13px;
+                width: 13px;
+                margin-right: 5px;
+                margin-bottom: -2px;
+                border: 1px solid #a8a8a8;
+            }
+
+            span.type-nintendo-gba {
+                background-color: #5a3597;
+            }
+
+            span.type-nintendo-gbc {
+                background-color: #73ce32;
+            }
+
+            span.type-nintendo-ngc {
+                background-color: #695aab;
+            }
+
+            span.type-pc {
+                background-color: #000;
+            }
+
+            span.type-ps1,
+            span.type-ps2,
+            span.type-ps3,
+            span.type-ps4,
+            span.type-ps5 {
+                background-color: #1e5ddb;
+            }
+
+            span.type-psp {
+                background-color: #000;
+            }
+
+            span.type-ps-vita {
+                background-color: #1e5ddb;
+            }
+
+            span.type-xbox,
+            span.type-xbox-360,
+            span.type-xbox-one,
+            span.type-xbox-one-x,
+            span.type-xbox-series-x {
+                background-color: #0e760d;
+            }
+
+            span.place-visited {
+                border-color: #99ca4a;
+                background-color: rgba(#99ca4a, 0.5);
+            }
+
+            span.place-not-visited {
+                border-color: #a8a8a8;
+                background-color: rgba(#a8a8a8, 0.5);
+            }
+        }
+    }
+}
+
+// ======================
+// = Ikony
+// ======================
+#adminmenu {
+    .menu-icon-created-websites     .wp-menu-image,
+    .menu-icon-milestones           .wp-menu-image,
+    .menu-icon-timeline-cars        .wp-menu-image,
+    .menu-icon-timeline-computers   .wp-menu-image,
+    .menu-icon-timeline-phones      .wp-menu-image,
+    .menu-icon-timeline-rpg         .wp-menu-image,
+    .menu-icon-timeline-sport       .wp-menu-image,
+    .menu-icon-box-games            .wp-menu-image,
+    .menu-icon-timeline-work        .wp-menu-image,
+    .menu-icon-places               .wp-menu-image {
+        &::before {
+            color: #83ee79 !important;
+        }
+    }
+}

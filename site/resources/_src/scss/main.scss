@@ -1,0 +1,28 @@
+// Imports from NPM
+@import
+    '../../../../node_modules/lightbox2/dist/css/lightbox.min.css';
+
+// Variables & Mixins
+@import
+    'setup/variables',
+    'setup/mixins';
+
+// Fonts
+@import
+    'fonts/load',
+    'fonts/iconfont';
+
+// Vendors
+@import
+    'vendors/bootstrap',
+    'vendors/rfs',
+    'vendors/slick',
+    'vendors/lightbox2';
+
+// Setup
+@import
+    'setup/global';
+
+// Blocks
+@import
+    'blocks/**/*';

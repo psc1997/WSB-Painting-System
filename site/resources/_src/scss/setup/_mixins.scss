@@ -1,0 +1,29 @@
+@mixin make-link-hover-line ($color, $height: 1px, $border-radius: 0) {
+    position: relative;
+
+    &:hover {
+        text-decoration: none;
+
+        &::after {
+            left: 0;
+            width: 100%;
+            opacity: 1;
+        }
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        height: $height;
+        width: 0;
+        background-color: $color;
+        border-radius: $border-radius;
+        opacity: 0;
+        transition:
+            left 0.35s,
+            width 0.35s,
+            opacity 0.25s;
+    }
+}

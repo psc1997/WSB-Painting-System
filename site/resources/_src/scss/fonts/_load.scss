@@ -1,0 +1,22 @@
+// @import 'iconfont';
+@import 'mixins';
+
+/**
+ * Czcionki
+ * @include font-face({font-name}, '../fonts/{font-folder}/{font-file-name}', {font-weight}, {font-style}, {font-type: woff ttf woff2});
+ */
+
+// HK Grotesk
+@include font-face('HKGrotesk', '../fonts/HKGrotesk/HKGrotesk-Regular', 400, normal, eot woff woff2);
+@include font-face('HKGrotesk', '../fonts/HKGrotesk/HKGrotesk-Medium', 500, normal, eot woff woff2);
+@include font-face('HKGrotesk', '../fonts/HKGrotesk/HKGrotesk-Bold', 700, normal, eot woff woff2);
+
+// Oxygen
+@include font-face('Oxygen', '../fonts/Oxygen/Oxygen-Light', 300, normal, ttf);
+@include font-face('Oxygen', '../fonts/Oxygen/Oxygen-Regular', 400, normal, ttf);
+@include font-face('Oxygen', '../fonts/Oxygen/Oxygen-Bold', 700, normal, ttf);
+
+// Cascadia Code
+@include font-face('CascadiaCode', '../fonts/CascadiaCode/CascadiaCodePL-Light', 300, normal, ttf woff2);
+@include font-face('CascadiaCode', '../fonts/CascadiaCode/CascadiaCodePL-Regular', 400, normal, ttf woff2);
+@include font-face('CascadiaCode', '../fonts/CascadiaCode/CascadiaCodePL-Bold', 700, normal, ttf woff2);

@@ -1,0 +1,8 @@
+{
+    "name": "pastamedia/wp-starter",
+    "version": "2.0.0",
+    "description": "PastaMedia Starter Pack 2.0 package file.",
+    "require": {
+        "symfony/var-dumper": "^5.1"
+    }
+}

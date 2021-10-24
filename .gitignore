@@ -1,0 +1,8 @@
+# editor files
+.vscode
+
+# vendors and dependencies
+node_modules
+vendor
+
+site/public/dist

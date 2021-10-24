@@ -1,0 +1,42 @@
+// =======================================================
+// =
+// - @include media-breakpoint-down (xl) - laptop 1366px
+// - @include media-breakpoint-down (lg) - ekran 4:3
+// - @include media-breakpoint-down (md) - tablet
+// - @include media-breakpoint-down (sm) - telefon
+// =
+// =======================================================
+
+// Bootstrap configuration
+$grid-columns: 24;
+$grid-gutter-width: 16px;
+$modal-backdrop-bg: #2c3033;
+$modal-backdrop-opacity: 0.9;
+
+$grid-breakpoints: (
+    tn: 0,      // Mobile Extra Small
+    xs: 576px,  // Mobile
+    sm: 768px,  // Tablet
+    md: 1024px, // Monitor 1024px
+    lg: 1300px, // Laptop 1366 x 768
+    xl: 1600px
+);
+
+$container-max-widths: (
+    xs: 540px,
+    sm: 720px,
+    md: 960px,
+    lg: 1200px,
+    xl: 1410px
+);
+
+// Load bootstrap
+@import '../../../../node_modules/bootstrap/scss/bootstrap';
+
+// Rozszerzenie bocznych marginesów na mobile ;>
+.container {
+    @include media-breakpoint-down (sm) {
+        padding-right: 16px;
+        padding-left: 16px;
+    }
+}

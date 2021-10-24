@@ -8,8 +8,39 @@
             @yield('title')
         </title>
 
+        <!-- Fonts -->
+        <link rel="dns-prefetch" href="//fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+
+        <!-- Styles -->
+        <link href="{{ asset('dist/css/main.css') }}" rel="stylesheet">
+
     </head>
     <body>
+        <header>
+            <div class="container">
+                <div class="row">
+                    <div class="col-24">
+                        HEADER
+                    </div>
+                </div>
+            </div>
+        </header>
+
         @yield('content')
+
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-24">
+                        FOOTER
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Scripts -->
+        <script src="{{ asset('vendor/jquery.min.js') }}"></script>
+        <script src="{{ asset('dist/js/main.js') }}" defer></script>
     </body>
 </html>
