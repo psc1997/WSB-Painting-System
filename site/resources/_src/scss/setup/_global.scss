@@ -12,12 +12,9 @@ html {
 }
 
 body {
-    background-color: #fff;
+    color: $white;
+    background-color: $black;
     overflow-x: hidden;
-
-    &.is-locked {
-        overflow: hidden;
-    }
 }
 
 p {

@@ -21,7 +21,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-24">
-                        HEADER
+                        [LOGO]
                     </div>
                 </div>
             </div>

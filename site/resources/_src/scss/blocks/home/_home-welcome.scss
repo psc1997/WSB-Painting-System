@@ -1,3 +1,35 @@
 .home-welcome {
-    // Type something...
+    position: relative;
+    padding: 240px 0;
+    background-color: $black;
+    overflow: hidden;
+
+    &__background-video-box {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: auto;
+        width: 100%;
+        transform: translate(-50%, -50%);
+    }
+
+    &__background-video {
+        height: auto;
+        width: 100%;
+    }
+
+    &__title {
+        margin-bottom: 12px;
+        color: $white;
+        font-family: $first-font;
+        font-weight: 500;
+
+        @include rfs(60px);
+
+        &--smaller {
+            margin-bottom: 32px;
+
+            @include rfs(30px);
+        }
+    }
 }
