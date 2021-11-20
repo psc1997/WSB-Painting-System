@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Welcome')
+@section('title', 'PaintIT - Home')
 
 @section('content')
     <section class="home-welcome">

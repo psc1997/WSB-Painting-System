@@ -6,7 +6,10 @@
  * @include font-face({font-name}, '../fonts/{font-folder}/{font-file-name}', {font-weight}, {font-style}, {font-type: woff ttf woff2});
  */
 
-// HK Raleway
+// Raleway
 @include font-face('Raleway', '../fonts/Raleway/Raleway-Regular', 400, normal, ttf);
-@include font-face('Raleway', '../fonts/Raleway/Raleway-Medium', 500, normal, ttf);
 @include font-face('Raleway', '../fonts/Raleway/Raleway-Bold', 700, normal, ttf);
+
+// PlayfairDisplay
+@include font-face('PlayfairDisplay', '../fonts/PlayfairDisplay/PlayfairDisplay-Regular', 400, normal, ttf);
+@include font-face('PlayfairDisplay', '../fonts/PlayfairDisplay/PlayfairDisplay-Bold', 700, normal, ttf);
