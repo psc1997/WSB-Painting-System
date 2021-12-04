@@ -1,3 +1,24 @@
 .button {
-    // Type something...
+    display: inline-block;
+    padding: 20px 30px;
+    color: $first-color-0;
+    font-family: $second-font;
+    font-weight: 600;
+    transition: all 0.25s;
+
+    @include rfs(20px);
+
+    &:hover {
+        text-decoration: none;
+    }
+    
+    &--ghost {
+        border: 1px solid $first-color-0;
+        background-color: transparent;
+
+        &:hover {
+            color: $white;
+            background-color: $first-color-0;
+        }
+    }
 }

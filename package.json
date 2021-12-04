@@ -19,7 +19,8 @@
         "bootstrap": "^4.6.0",
         "js-cookie": "^2.2.0",
         "lightbox2": "^2.11.1",
-        "rfs": "^9.0.0"
+        "rfs": "^9.0.0",
+        "slick-carousel": "^1.8.1"
     },
     "devDependencies": {
         "@babel/core": "^7.11.6",
