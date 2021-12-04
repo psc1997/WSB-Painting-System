@@ -27,34 +27,37 @@
                     Ostatnio dodane
                 </h2>
                <!-- Slider main container -->
-               <div class="swiper home-paintings__slider js-home-slider">
-                   <!-- Additional required wrapper -->
-                   <div class="swiper-wrapper">
-                       <!-- Slides -->
-                       <?php foreach ($temp as $key => $value) : ?>
-                            <div class="swiper-slide">
-                                <div class="card">
-                                    <img src="<?= $value['img']; ?>" class="card-img-top" alt="">
-                                    <div class="card-body">
-                                        <h4 class="card-title">
-                                            <?= $value['title']; ?>
-                                        </h4>
-                                        <p class="card-text">
-                                            Text
-                                        </p>
+                <div class="position-relative mb-5">
+                    <div class="swiper home-paintings__slider js-home-slider">
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                            <!-- Slides -->
+                            <?php foreach ($temp as $key => $value) : ?>
+                                <div class="swiper-slide">
+                                    <div class="card home-paintings__item">
+                                        <img src="<?= $value['img']; ?>" class="card-img-top home-paintings__item-image" alt="">
+                                        <div class="card-body">
+                                            <h4 class="card-title">
+                                                <?= $value['title']; ?>
+                                            </h4>
+                                            <p class="card-text">
+                                                Text
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        <?php endforeach; ?>
-                   </div>
-
-                   <!-- If we need navigation buttons -->
-                   <div class="swiper-button-prev home-paintings__slider-button js-home-slider-button-prev"></div>
-                   <div class="swiper-button-next home-paintings__slider-button js-home-slider-button-next"></div>
-               </div>
-                <a href="#" class="button button--ghost">
-                    Zobacz więcej
-                </a>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
+                    <!-- If we need navigation buttons -->
+                    <div class="swiper-button-prev home-paintings__slider-button home-paintings__slider-button--left js-home-slider-button-prev"></div>
+                    <div class="swiper-button-next home-paintings__slider-button home-paintings__slider-button--right js-home-slider-button-next"></div>
+                </div>
+                <div class="text-right">
+                    <a href="#" class="button button--ghost">
+                        Zobacz więcej
+                    </a>
+                </div>
             </div>
         </div>
     </div>
