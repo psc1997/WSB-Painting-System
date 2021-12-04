@@ -9,6 +9,7 @@ export default function makeSlider () {
     const swiper = new Swiper('.js-home-slider', {
         direction: 'horizontal',
         slidesPerView: 3,
+        spaceBetween: 10,
         loop: true,
         navigation: {
             nextEl: '.js-home-slider-button-next',
