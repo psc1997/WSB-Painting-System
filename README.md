@@ -25,7 +25,11 @@ Dla numeru wersji MAJOR.MINOR.PATCH, zwiększaj:
 * PATCH, gdy naprawiasz błąd nie zrywając kompatybilności z poprzednimi wersjami.
 
 ## Instalacja
-[...]
+1. Pobrać repozytorium
+2. Otworzyć terminal
+3. Przejść do folderu site poleceniem 'cd site'
+4. Puścić 'composer install'
+5. Wygenerować klucz [...]
 
 ## Gulp
 - `npm run watch` - watcher

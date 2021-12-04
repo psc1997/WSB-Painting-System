@@ -28,8 +28,11 @@
 @function icon-char($filename) {
 	$char: "";
 
-	@if $filename == close {
+	@if $filename == circle-arrow-right {
 		$char: "\E001";
+	}
+	@if $filename == close {
+		$char: "\E002";
 	}
 
 	@return $char;
@@ -46,6 +49,9 @@
 	}
 }
 
+.icon-circle-arrow-right {
+	@include icon(circle-arrow-right);
+}
 .icon-close {
 	@include icon(close);
 }

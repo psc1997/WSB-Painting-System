@@ -4,4 +4,22 @@
     &__title {
 
     }
+
+    &__slider {
+        height: auto;
+        width: 100%;
+    }
+
+    &__slider-button {
+        height: unset;
+        width: unset;
+        margin-top: unset;
+        color: $first-color-0;
+
+        @include icon('circle-arrow-right', 'after');
+
+        &::after { 
+            font-size: 100px;
+        }
+    }
 }

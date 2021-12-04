@@ -1,13 +1,16 @@
+// import 'jquery';
 import 'popper.js';
 import 'bootstrap';
 import 'lightbox2';
 
 import makeCookies from './modules/cookie-info';
 import makeSmoothScrollLogic from './modules/smooth-scroll';
+import makeSlider from './modules/homeslider';
 
 const documentReady = () => {
     makeCookies();
     makeSmoothScrollLogic();
+    makeSlider();
 };
 
 if (
