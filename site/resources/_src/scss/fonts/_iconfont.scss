@@ -34,6 +34,12 @@
 	@if $filename == close {
 		$char: "\E002";
 	}
+	@if $filename == heart-empty {
+		$char: "\E003";
+	}
+	@if $filename == heart-full {
+		$char: "\E004";
+	}
 
 	@return $char;
 }
@@ -54,5 +60,11 @@
 }
 .icon-close {
 	@include icon(close);
+}
+.icon-heart-empty {
+	@include icon(heart-empty);
+}
+.icon-heart-full {
+	@include icon(heart-full);
 }
 
