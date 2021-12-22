@@ -13,7 +13,7 @@
 
     </head>
     <body>
-        <header>
+        <header class="header">
             <div class="container">
                 <div class="row">
                     <div class="col-24">

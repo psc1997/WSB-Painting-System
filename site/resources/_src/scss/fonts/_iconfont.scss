@@ -34,6 +34,9 @@
 	@if $filename == close {
 		$char: "\E002";
 	}
+	@if $filename == search {
+		$char: "\E003";
+	}
 
 	@return $char;
 }
@@ -55,4 +58,6 @@
 .icon-close {
 	@include icon(close);
 }
-
+.icon-search {
+	@include icon(search);
+}
