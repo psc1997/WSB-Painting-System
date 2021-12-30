@@ -56,23 +56,14 @@
     }
 
     &__content-input {
-        border: 2px solid $white;
-        border-right: 0;
-        border-radius: 0 !important;
         height: 52px;
         padding-left: 48px;
-        transition:
-            padding-left 0.25s,
-            border-color 0.25s;
+        transition: padding-left 0.25s;
 
-        @include rfs(20px);
+        @include rfs(22px);
 
         &::placeholder {
             color: $second-color-0;
-        }
-
-        &:hover {
-            border-color: $first-color-0-hover;
         }
 
         &.is-not-empty,
@@ -80,7 +71,6 @@
         &:active {
             padding-left: 16px;
             box-shadow: unset;
-            border-color: $first-color-0;
 
             + #{$root}__content-input-icon {
                 opacity: 0;
@@ -103,17 +93,6 @@
     }
 
     &__content-input-button {
-        border: 0;
-        padding: 0 25px;
-        background-color: $first-color-0;
-        color: $white;
-        font-family: $second-font;
-        font-weight: 600;
-        transition: background-color 0.25s;
-
-        &:hover {
-            background-color: $first-color-0-hover;
-            text-decoration: none;
-        }
+        
     }
 }
