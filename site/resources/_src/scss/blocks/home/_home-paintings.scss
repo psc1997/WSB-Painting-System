@@ -23,7 +23,7 @@
         @include icon('circle-arrow-right', 'after');
 
         &:hover {
-            color: lighten($first-color-0, 8%);
+            color: $first-color-0-hover;
         }
 
         &::after { 

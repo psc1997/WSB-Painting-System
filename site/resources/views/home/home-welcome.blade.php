@@ -24,7 +24,7 @@
                             <input type="text" class="form-control home-welcome__content-input" placeholder="Znajdź artystę lub styl...">
                             <span class="icon icon-search home-welcome__content-input-icon"></span>
                             <div class="input-group-append">
-                                <button class="button" type="button">
+                                <button class="home-welcome__content-input-button" type="button">
                                     Szukaj
                                 </button>
                             </div>
@@ -35,4 +35,3 @@
         </div>
     </div>
 </section>
-

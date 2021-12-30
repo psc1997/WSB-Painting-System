@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <title>
             @yield('title')
@@ -17,7 +18,27 @@
             <div class="container">
                 <div class="row">
                     <div class="col-24">
-                        [LOGO]
+
+                        {{-- <a href="{{ route('dashboard') }}">
+                            XXX
+                        </a>
+
+                        {{ Auth::user()->name ?? 'XXX' }}
+
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+
+                            <x-dropdown-link :href="route('logout')"
+                                    onclick="event.preventDefault();
+                                                this.closest('form').submit();">
+                                {{ __('Log Out') }}
+                            </x-dropdown-link>
+                        </form>
+
+                        <div class="font-medium text-base text-gray-800">{{ Auth::user()->name ?? 'XXX' }}</div>
+                        <div class="font-medium text-sm text-gray-500">{{ Auth::user()->email ?? 'XXX' }}</div> --}}
+
+                        
                     </div>
                 </div>
             </div>
