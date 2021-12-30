@@ -17,7 +17,7 @@
     </head>
     <body>
         <header class="header">
-            <nav class="navbar navbar-expand-lg header__navbar">
+            <nav class="navbar navbar-expand-sm header__navbar">
                 <a href="#" class="navbar-brand">
                     LOGO
                 </a>
@@ -33,7 +33,7 @@
                             @if (Route::has('login'))
                                 <li class="nav-item header__nav-item">
                                     <a class="nav-link header__nav-link" href="{{ route('login') }}">
-                                        <span class="icon icon-xxx"></span><br>
+                                        <span class="icon icon-acount"></span><br>
                                         Zaloguj się
                                     </a>
                                 </li>
@@ -41,13 +41,13 @@
                         @else
                             <li class="nav-item header__nav-item">
                                 <a class="nav-link header__nav-link" href="{{ route('login') }}">
-                                    <span class="icon icon-xxx"></span><br>
+                                    <span class="icon icon-heart-empty"></span><br>
                                     Ulubione
                                 </a>
                             </li>
                             <li class="nav-item header__nav-item">
                                 <a class="nav-link header__nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                    <span class="icon icon-xxx"></span><br>
+                                    <span class="icon icon-acount"></span><br>
                                     Wyloguj
                                 </a>
 
