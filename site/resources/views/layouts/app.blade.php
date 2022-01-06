@@ -19,7 +19,7 @@
         <header class="header">
             <nav class="navbar navbar-expand-sm header__navbar">
                 <a href="#" class="navbar-brand">
-                    LOGO
+                        <img src="{{ asset('dist/img/logo.svg') }}" alt="painting-logo" class="header__logo">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false"
@@ -63,11 +63,20 @@
 
         @yield('content')
 
-        <footer>
+        <footer class="footer__background">
             <div class="container">
                 <div class="row">
-                    <div class="col-24">
-                        FOOTER
+                    <div class="col-24 col-md-6">
+                      <h5 class="footer__paintit">
+                        <br>
+                        PaintIT!<br>
+                        Serwis wpierający młodych artystów, którzy poszukują inspiracji <br>
+                    
+
+                      </h5>
+                      <p>
+                        asdasdhaskjdhj
+                      </p>
                     </div>
                 </div>
             </div>

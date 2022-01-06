@@ -26,4 +26,10 @@
 
         @include rfs(18px);
     }
+       &__logo{
+           width: 150px;
+           height: auto;
+
+       }
+
 }
