@@ -32,8 +32,7 @@ class ProfileController extends Controller
                 ->where('id', $user_id)
                 ->first();
 
-            // $user_paintings = ProfileController::getPaintings($user_id);
-            $user_paintings = [];
+            $user_paintings = ProfileController::getPaintings($user_id);
 
             // ================
             // = AVATAR I TŁO
@@ -137,28 +136,18 @@ class ProfileController extends Controller
      * @return void
      */
     public static function getPaintings (int $id_user) {
-        $user_paintings = DB::table('profiles')
+        $user_paintings = DB::table('paintings')
             ->select(
-                'games.name',
-                'games.name_pol',
-                'games.genre',
-                'games.series_id',
-                'games.series_order',
-                'platforms.id AS platform_id',
-                'platforms.name AS platform_name',
-                'platforms.shortcut AS platform_shortcut',
-                'profiles.id AS id_user_profile',
-                'profiles.status',
-                'profiles.finished_date',
-                'profiles.finished_duration',
-                'profiles.finished_progress',
-                'profiles.is_hidden'
+                'paintings.id',
+                'paintings.name',
+                'paintings.painting_technique',
+                'paintings.height',
+                'paintings.width',
+                'categories.name',
             )
-            ->join('platforms', 'profiles.id_platform', '=', 'platforms.id')
-            ->join('games', 'profiles.id_game', '=', 'games.id')
-            ->where('id_user', $id_user)
-            ->orderBy('profiles.status', 'desc')
-            ->orderBy('games.name', 'asc')
+            ->join('categories', 'paintings.category_id', '=', 'categories.id')
+            ->where('user_id', $id_user)
+            ->orderBy('paintings.created_at', 'asc')
             ->get();
 
         return $user_paintings;

@@ -37,16 +37,22 @@ class UserSeeder extends Seeder
                 'name' => 'rafal.kozlowski',
                 'email' => 'RafalKozlowski@localhost.local',
                 'password' => Hash::make('Johgh4aif'),
+                'first_name' => 'Rafał',
+                'last_name' => 'Kozłowski',
                 'created_at' => now(),
             ],[
                 'name' => 'gertruda.adamczyk',
                 'email' => 'GertrudaAdamczyk@localhost.local',
                 'password' => Hash::make('qwerty123'),
+                'first_name' => 'Gertruda',
+                'last_name' => 'Adamczyk',
                 'created_at' => now(),
             ],[
                 'name' => 'zosia.nowicka',
                 'email' => 'ZosiaNowicka@localhost.local',
                 'password' => Hash::make('qwerty123'),
+                'first_name' => 'Zosia',
+                'last_name' => 'Nowicka',
                 'created_at' => now(),
             ]
         ]);

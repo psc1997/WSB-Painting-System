@@ -15,8 +15,8 @@ class Paintings extends Migration
     {
         Schema::create('paintings', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id')->references('id')->on('users');
-            $table->integer('category_id')->references('id')->on('categories');
+            $table->integer('user_id');
+            $table->integer('category_id');
             $table->string('name');
             $table->longText('description');
             $table->string('painting_technique');

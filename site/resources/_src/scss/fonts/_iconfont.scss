@@ -49,6 +49,9 @@
 	@if $filename == search {
 		$char: "\E007";
 	}
+	@if $filename == user-edit {
+		$char: "\E008";
+	}
 
 	@return $char;
 }
@@ -84,4 +87,7 @@
 }
 .icon-search {
 	@include icon(search);
+}
+.icon-user-edit {
+	@include icon(user-edit);
 }
