@@ -1,13 +1,10 @@
 .footer {
-    &__background {
-        background-color: $white;
-        font-family: $second-font;
-        color: $black
-         }
+    padding: 60px 0;
+    background-color: $white;
+    color: $black;
+    font-family: $second-font;
 
-    &__paintit{
+    &__paintit {
       
-
     }
-
 }

@@ -69,20 +69,19 @@
 
         @yield('content')
 
-        <footer class="footer__background">
+        <footer class="footer">
             <div class="container">
                 <div class="row">
                     <div class="col-24 col-md-6">
-                      <h5 class="footer__paintit">
-                        <br>
-                        PaintIT!<br>
-                        Serwis wpierający młodych artystów, którzy poszukują inspiracji <br>
-                    
-
-                      </h5>
-                      <p>
-                        asdasdhaskjdhj
-                      </p>
+                        <h5 class="footer__paintit">
+                            PaintIT!
+                        </h5>
+                        <p>
+                            Serwis wpierający młodych artystów, którzy poszukują inspiracji
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim, vero. Ad dicta accusantium sed temporibus eaque autem et molestiae? Minima eum iusto porro voluptates qui quis inventore beatae unde maiores.
+                        </p>
                     </div>
                 </div>
             </div>
