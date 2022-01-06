@@ -1,10 +1,25 @@
 .footer {
-    padding: 60px 0;
+    padding: 30px 0 30px;
     background-color: $white;
     color: $black;
     font-family: $second-font;
 
-    &__paintit {
-      
+    &__text {
+        padding: 0 0 30px 0;
+        font-family: $second-font;
+        font-weight: 400;
+        @include rfs(14px);
+    }
+    &__data {
+        text-align: center;
+        font-family: $second-font;
+        background-color: $first-color-0;
+        color: $white;
+    }
+    &__link {
+        padding: 20px 0;
+        font-family: $second-font;
+        color: $black;
+        @include rfs(14px);
     }
 }
