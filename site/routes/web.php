@@ -25,6 +25,14 @@ Route::get('/paintings', function () {
     return view('paintings');
 });
 
+Route::get('/terms', function () {
+    return view('terms');
+});
+
+Route::get('/instruction', function () {
+    return view('instruction');
+});
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
