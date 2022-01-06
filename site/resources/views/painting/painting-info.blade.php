@@ -6,28 +6,43 @@
             </div>
             <div class="col-24 col-md-11 offset-0 offset-md-2">
                 <div class="painting-info__description">
-                    <h2 class="painting-info__description-author">
-                        Adam Nowak
-                    </h2>
-                    <p class="painting-info__description-likes">
-                        <span class="icon-heart-full painting-info__description-heart"></span> 2102
-                    </p>
-                    <h3 class="painting-info__description-title">
-                        "Kotek"
-                    </h3>
-                    <p class="painting-info__description-size">
-                        Akryl na płótnie 100x70
-                    </p>
-                    <p class="painting-info__description-category">
-                        Kategoria Zwierzęta
-                    </p>
+                    
+                    @if ((!empty($painting_fn)) || (!empty($painting_ln)))
+                        <h2 class="painting-info__description-author">
+                            {{ $painting_fn }} {{ $painting_ln }}
+                        </h2>
+                    @endif
+
+                        <p class="painting-info__description-likes">
+                            <span class="icon-heart-full painting-info__description-heart"></span> 2102
+                        </p>
+
+                    @if (!empty($painting_data->name))
+                        <h3 class="painting-info__description-title">
+                            {{ $painting_data->name }}
+                        </h3>
+                    @endif
+                    
+                    @if (!empty($painting_data->painting_technique))
+                        <p class="painting-info__description-size">
+                            {{ $painting_data->painting_technique }}
+                        </p>
+                    @endif
+
+                    @if (!empty($painting_cat))
+                        <p class="painting-info__description-category">
+                            {{ $painting_cat }}
+                        </p>
+                    @endif
+
                     <div class="painting-info__description-about-author">
-                        <p class="painting-info__description-about">
-                        O Artyście
-                        </p>
+                    
+                    @if (!empty($painting_data->description))
                         <p class="painting-info__description-about-text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            {{ $painting_data->description }}
                         </p>
+                    @endif
+                        
                     </div>
                  </div>
             </div>
