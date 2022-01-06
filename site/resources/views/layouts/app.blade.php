@@ -18,8 +18,8 @@
     <body>
         <header class="header">
             <nav class="navbar navbar-expand-sm header__navbar">
-                <a href="#" class="navbar-brand">
-                        <img src="{{ asset('dist/img/logo.svg') }}" alt="painting-logo" class="header__logo">
+                <a href="{{ url('/') }}" class="navbar-brand">
+                    <img src="{{ asset('dist/img/logo.svg') }}" alt="painting-logo" class="header__logo">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false"
