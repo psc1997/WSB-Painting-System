@@ -23,7 +23,12 @@
         font-family: $second-font;
         font-weight: 600;
         text-align: center;
+        transition: color 0.25s;
 
         @include rfs(18px);
+
+        &:hover {
+            color: $first-color-1;
+        }
     }
 }

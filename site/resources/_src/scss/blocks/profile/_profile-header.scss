@@ -1,0 +1,23 @@
+.profile-header {
+    padding: 120px 0;
+
+    &__avatar {
+        
+    }
+
+    &__pretitle {
+        margin-bottom: 0;
+        color: $white;
+        font-family: $second-font;
+
+        @include rfs(14px);
+    }
+
+    &__title {
+        color: $white;
+        font-family: $second-font;
+        font-weight: 700;
+
+        @include rfs(32px);
+    }
+}

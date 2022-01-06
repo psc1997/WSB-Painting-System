@@ -32,22 +32,28 @@
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item header__nav-item">
-                                    <a class="nav-link header__nav-link" href="{{ route('login') }}">
+                                    <a href="{{ route('login') }}" class="nav-link header__nav-link">
                                         <span class="icon icon-acount"></span><br>
                                         Zaloguj się
                                     </a>
                                 </li>
                             @endif
                         @else
-                            <li class="nav-item header__nav-item">
-                                <a class="nav-link header__nav-link" href="{{ route('login') }}">
+                            {{-- <li class="nav-item header__nav-item">
+                                <a href="#" class="nav-link header__nav-link">
                                     <span class="icon icon-heart-empty"></span><br>
                                     Ulubione
                                 </a>
+                            </li> --}}
+                            <li class="nav-item header__nav-item">
+                                <a href="{{ route('profile.index', Auth::user()->name) }}" class="nav-link header__nav-link">
+                                    <span class="icon icon-acount"></span><br>
+                                    Profil
+                                </a>
                             </li>
                             <li class="nav-item header__nav-item">
-                                <a class="nav-link header__nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                    <span class="icon icon-acount"></span><br>
+                                <a href="{{ route('logout') }}" class="nav-link header__nav-link" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                    <span class="icon icon-logout"></span><br>
                                     Wyloguj
                                 </a>
 
