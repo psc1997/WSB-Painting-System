@@ -17,9 +17,7 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/painting', function () {
-    return view('painting');
-});
+Route::get('/painting/{id}', 'App\Http\Controllers\PaintingController@index')->name('painting.index');
 
 Route::get('/paintings', function () {
     return view('paintings');

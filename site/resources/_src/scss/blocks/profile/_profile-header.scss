@@ -15,11 +15,26 @@
     }
 
     &__title {
+        margin-bottom: 0;
         color: $white;
         font-family: $second-font;
         font-weight: 700;
 
         @include rfs(32px);
+
+        &--smaller {
+            color: rgba($white, 0.75);
+
+            @include rfs(24px);
+        }
+    }
+
+    &__text {
+        margin-top: 32px;
+        color: $white;
+        font-family: $second-font;
+
+        @include rfs(14px);
     }
 
     &__button-edit {
@@ -31,8 +46,13 @@
         width: 80px;
         background-color: $dark-2;
         color: $white;
+        font-weight: 700;
         text-align: center;
         transition: background-color 0.25s;
+
+        &:not(:last-of-type) {
+            margin-bottom: 8px;
+        }
 
         &:hover {
             color: $white;
@@ -42,6 +62,6 @@
     }
 
     &__button-edit-icon {
-        
+        font-size: 24px;
     }
 }

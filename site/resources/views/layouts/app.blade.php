@@ -71,57 +71,59 @@
 
     @yield('content')
 
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-24 col-md-6">
-                    <h5 class="footer__paintit">
-                        PaintIT!
-                    </h5>
-                    <p class="footer__text">
-                        Jesteśmy platformą internetową łączącą ludzi z całego świata, którzy tworzą i kolekcjonują
-                        wyjątkowe produkty. Serwis wpierający młodych artystów, którzy poszukują inspiracji.
-                    </p>
-                </div>
-                <div class="col-24 col-md-12">
-					<div class="text-center">
-						<div class="footer__link">
-							<ul class="nav flex-column">
-								<li class="nav-item">
-								  <a class="nav-link" href="{{ url('/terms') }}">Regulamin</a>
-								</li>
-								<li class="nav-item">
-								  <a class="nav-link" href="{{ url('/instruction') }}">Jak korzystać?</a>
-								</li>
-							  </ul>
-						</div>
-					</div> 
-                </div>
-                <div class="col-24 col-md-3">
-                    <p class="footer__text">
-                        Kontakt<br>
-						555 555 123<br>
-						Milczańska 22/5<br>
-						61-000 Poznań
-                    </p>
-				</div>
-				<div class="col-24 col-md-3">
-                    <div class="d-flex justify-content-end">
-                        <img src="{{ asset('dist/img/logo.svg') }}" alt="painting-logo" class="header__logo">
+    @if (Request::is('login') === false)
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-24 col-md-6">
+                        <h5 class="footer__paintit">
+                            PaintIT!
+                        </h5>
+                        <p class="footer__text">
+                            Jesteśmy platformą internetową łączącą ludzi z całego świata, którzy tworzą i kolekcjonują
+                            wyjątkowe produkty. Serwis wpierający młodych artystów, którzy poszukują inspiracji.
+                        </p>
                     </div>
-				</div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-24 col-md-24">
-                    <div class="footer__data">
-                        2021 PaintIT!, Inc.
+                    <div class="col-24 col-md-12">
+                        <div class="text-center">
+                            <div class="footer__link">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item">
+                                    <a class="nav-link" href="{{ url('/terms') }}">Regulamin</a>
+                                    </li>
+                                    <li class="nav-item">
+                                    <a class="nav-link" href="{{ url('/instruction') }}">Jak korzystać?</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div> 
+                    </div>
+                    <div class="col-24 col-md-3">
+                        <p class="footer__text">
+                            Kontakt<br>
+                            555 555 123<br>
+                            Milczańska 22/5<br>
+                            61-000 Poznań
+                        </p>
+                    </div>
+                    <div class="col-24 col-md-3">
+                        <div class="d-flex justify-content-end">
+                            <img src="{{ asset('dist/img/logo.svg') }}" alt="painting-logo" class="header__logo">
+                        </div>
+                    </div>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-24 col-md-24">
+                        <div class="footer__data">
+                            2021 PaintIT!, Inc.
+                        </div>
+                    </div>
 
+                </div>
             </div>
-        </div>
-    </footer>
+        </footer>
+    @endif
 
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
