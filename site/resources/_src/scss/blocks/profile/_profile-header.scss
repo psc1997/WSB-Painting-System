@@ -21,4 +21,27 @@
 
         @include rfs(32px);
     }
+
+    &__button-edit {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 80px;
+        width: 80px;
+        background-color: $dark-2;
+        color: $white;
+        text-align: center;
+        transition: background-color 0.25s;
+
+        &:hover {
+            color: $white;
+            background-color: $first-color-1;
+            text-decoration: none;
+        }
+    }
+
+    &__button-edit-icon {
+        
+    }
 }
