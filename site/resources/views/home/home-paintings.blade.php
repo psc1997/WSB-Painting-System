@@ -76,7 +76,7 @@
                     </div>
                 </div>
                 <div class="text-right">
-                    <a href="#" class="button button--ghost">
+                    <a href="#" class="button button--ghost button--big">
                         Zobacz więcej
                     </a>
                 </div>

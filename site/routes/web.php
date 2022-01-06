@@ -24,3 +24,6 @@ Route::get('/painting', function () {
 Route::get('/paintings', function () {
     return view('paintings');
 });
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -28,20 +28,23 @@
 @function icon-char($filename) {
 	$char: "";
 
-	@if $filename == circle-arrow-right {
+	@if $filename == acount {
 		$char: "\E001";
 	}
-	@if $filename == close {
+	@if $filename == circle-arrow-right {
 		$char: "\E002";
 	}
-	@if $filename == heart-empty {
+	@if $filename == close {
 		$char: "\E003";
 	}
-	@if $filename == heart-full {
+	@if $filename == heart-empty {
 		$char: "\E004";
 	}
-	@if $filename == search {
+	@if $filename == heart-full {
 		$char: "\E005";
+	}
+	@if $filename == search {
+		$char: "\E006";
 	}
 
 	@return $char;
@@ -58,6 +61,9 @@
 	}
 }
 
+.icon-acount {
+	@include icon(acount);
+}
 .icon-circle-arrow-right {
 	@include icon(circle-arrow-right);
 }
