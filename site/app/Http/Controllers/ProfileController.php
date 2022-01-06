@@ -28,7 +28,12 @@ class ProfileController extends Controller
             // ================
             // = INFO PROFILOWE
             $user_profile = DB::table('users')
-                ->select('name')
+                ->select(
+                    'name',
+                    'first_name',
+                    'last_name',
+                    'description',
+                )
                 ->where('id', $user_id)
                 ->first();
 
@@ -42,7 +47,6 @@ class ProfileController extends Controller
 
             // Zwracamy widok
             return view('profile.index', [
-                'username' => $username,
                 'user_profile' => $user_profile,
                 'user_paintings' => $user_paintings,
                 'user_images' => $user_images,

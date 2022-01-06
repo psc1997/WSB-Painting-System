@@ -75,23 +75,25 @@
 
         @yield('content')
 
-        <footer class="footer">
-            <div class="container">
-                <div class="row">
-                    <div class="col-24 col-md-6">
-                        <h5 class="footer__paintit">
-                            PaintIT!
-                        </h5>
-                        <p>
-                            Serwis wpierający młodych artystów, którzy poszukują inspiracji
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim, vero. Ad dicta accusantium sed temporibus eaque autem et molestiae? Minima eum iusto porro voluptates qui quis inventore beatae unde maiores.
-                        </p>
+        @if (Request::is('login') === false)
+            <footer class="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-24 col-md-6">
+                            <h5 class="footer__paintit">
+                                PaintIT!
+                            </h5>
+                            <p>
+                                Serwis wpierający młodych artystów, którzy poszukują inspiracji
+                            </p>
+                            <p>
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim, vero. Ad dicta accusantium sed temporibus eaque autem et molestiae? Minima eum iusto porro voluptates qui quis inventore beatae unde maiores.
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </footer>
+            </footer>
+        @endif
 
         <!-- Scripts -->
         <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
