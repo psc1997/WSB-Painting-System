@@ -4,5 +4,5 @@
 
 @section('content')
     @include('painting.painting-categories')
-    @include('paintings.paintings-content')
+    @include('paintings.paintings-index')
 @endsection

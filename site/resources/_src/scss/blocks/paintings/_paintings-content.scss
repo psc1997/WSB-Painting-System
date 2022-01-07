@@ -1,3 +1,69 @@
-.paintings-content{
+.paintings-content {
+    $root: &;
 
+    padding: 120px 0;
+
+    &__image-link {
+        display: block;
+        position: relative;
+        margin-bottom: 15px;
+        background-color: $white;
+
+        &:hover {
+            #{$root}__image {
+                transform:
+                    translate(-50%, -50%)
+                    scale(1.05);
+            }
+            #{$root}__image-box-info {
+                opacity: 0.4;
+            }
+        }
+    }
+
+    &__image-box {
+        position: relative;
+        padding-bottom: calc(85.71428571% - 15px);
+        overflow: hidden;
+    }
+
+    &__image {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: transform 0.25s;
+    }
+
+    &__image-box-info {
+        position: absolute;
+        opacity: 0;
+        z-index: 999;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        text-align: center;
+        color: $white;
+        background-color: $black;
+    }
+
+    &__image-box-info-title{
+        font-family: $first-font;
+        @include rfs(30px);
+    }
+    &__image-box-info-author{
+        font-family: $second-font;
+        @include rfs(15px);
+    }
+
+    &__image-box-info-technique{
+        font-family: $second-font;
+        @include rfs(15px);
+    }   
+
+    &__image-box-info-size{
+        font-family: $second-font;
+        @include rfs(15px);
+    }
 }

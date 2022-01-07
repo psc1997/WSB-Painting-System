@@ -7,7 +7,11 @@
                         <div class="paintings-content__image-box">
                             <img src="{{ asset('/dist/img/temp/' . $art->id . '.jpg') }}" alt="" class="img paintings-content__image">
                             <div class="paintings-content__image-box-info">
-                                {{ $art->id }} {{ $art->name }} {{ $art->painting_technique }} {{ $art->height }}{{ $art->width }}{{ $art->category }}{{ $art->first_name }}{{ $art->last_name}}
+                                <p class="paintings-content__image-box-info-title">{{ $art->name }}</p>
+                                <p class="paintings-content__image-box-info-author">{{ $art->first_name }} {{ $art->last_name}}</p>
+                                <p class="paintings-content__image-box-info-technique">{{ $art->painting_technique }} </p>
+                                <p class="paintings-content__image-box-info-size">{{ $art->height }}x{{ $art->width }} cm</p>
+                                {{-- {{ $art->id }} {{ $art->category }} --}}
                             </div>
                         </div>
                     </a>
