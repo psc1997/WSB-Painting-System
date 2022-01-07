@@ -1,8 +1,7 @@
 @extends('layouts.app')
 
-@section('title', 'PaintIT - Obraz')
+@section('title', 'PaintIT - Obrazy')
 
 @section('content')
-    @include('painting.painting-categories')
-    @include('painting.painting-info')
+    @include('paintings.paintings-content')
 @endsection
