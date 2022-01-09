@@ -1,7 +1,7 @@
-# Painting System
+# Paint IT
 
 ## Opis strony
-[...]
+Strona Internetowa poświęcona artystom. Dzięki niej artyści mogą pokazać światu swoje obrazy lub inną twórczość kreatywną.
 
 # Zaplecze technologiczne
 ## Front-end
@@ -13,6 +13,8 @@
 ### JavaScript
 * [jQuery Documentation](https://api.jquery.com/)
 * [JavaScript Cookie](https://github.com/js-cookie/js-cookie)
+* [Swiper](https://swiperjs.com/)
+* [Lightbox2](https://lokeshdhakar.com/projects/lightbox2/)
 
 ## Back-end
 * [Laravel 8](https://laravel.com/)
@@ -42,3 +44,5 @@ Dla numeru wersji MAJOR.MINOR.PATCH, zwiększaj:
 ## Autorzy
 * **Patryk Szulc** - *Initial work*
 * **Michalina Szymczak** - *Initial work*
+* **Damian Zabłocki** - *Initial work*
+* **Dawid Szczygielski** - *Initial work*
