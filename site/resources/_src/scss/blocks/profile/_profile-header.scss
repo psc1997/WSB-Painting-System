@@ -44,6 +44,7 @@
         flex-direction: column;
         height: 80px;
         width: 80px;
+        border: 0;
         background-color: $dark-2;
         color: $white;
         font-weight: 700;
@@ -63,5 +64,36 @@
 
     &__button-edit-icon {
         font-size: 24px;
+    }
+
+    &__input {
+        border: 2px solid $second-color-0;
+        border-radius: 0;
+        background-color: transparent;
+        color: $white;
+        font-family: $second-font;
+        font-weight: 700;
+        transition: border-color 0.25s;
+
+        &:focus,
+        &:active {
+            border-color: $first-color-1;
+            background-color: transparent;
+            color: $white;
+            box-shadow: none;
+        }
+
+        &:disabled {
+            background-color: transparent;
+            opacity: 0.66;
+
+            &:hover {
+                cursor: not-allowed;
+            }
+        }
+
+        &--textarea {
+            resize: none;
+        }
     }
 }

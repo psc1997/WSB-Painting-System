@@ -17,11 +17,9 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/painting/{id}', 'App\Http\Controllers\PaintingController@index')->name('painting.index');
-
-
 Route::get('/paintings', 'App\Http\Controllers\PaintingsController@index')->name('paintings.index');
 
+Route::get('/painting/{id}', 'App\Http\Controllers\PaintingController@index')->name('painting.index');
 
 Route::get('/terms', function () {
     return view('terms');

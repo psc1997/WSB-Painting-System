@@ -25,20 +25,22 @@
                     @endif
                 </div>
                 <div class="col-24 col-md-3 d-flex justify-content-end">
-                    <div>
-                        <a href="{{ route('profile.edit', Auth::user()->name) }}" class="profile-header__button-edit">
-                            <div>
-                                <span class="icon icon-user-edit profile-header__button-edit-icon"></span><br>
-                                Edytuj
-                            </div>
-                        </a>
-                        <a href="{{ route('profile.edit', Auth::user()->name) }}" class="profile-header__button-edit">
-                            <div>
-                                <span class="icon icon-image profile-header__button-edit-icon"></span><br>
-                                Dodaj
-                            </div>
-                        </a>
-                    </div>
+                    @auth
+                        <div>
+                            <a href="{{ route('profile.edit', Auth::user()->name) }}" class="profile-header__button-edit">
+                                <div>
+                                    <span class="icon icon-user-edit profile-header__button-edit-icon"></span><br>
+                                    Edytuj
+                                </div>
+                            </a>
+                            <a href="{{ route('profile.edit', Auth::user()->name) }}" class="profile-header__button-edit">
+                                <div>
+                                    <span class="icon icon-image profile-header__button-edit-icon"></span><br>
+                                    Dodaj
+                                </div>
+                            </a>
+                        </div>
+                    @endauth
                 </div>
             </div>
         </div>

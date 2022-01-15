@@ -43,14 +43,17 @@
 	@if $filename == heart-full {
 		$char: "\E005";
 	}
-	@if $filename == logout {
+	@if $filename == image {
 		$char: "\E006";
 	}
-	@if $filename == search {
+	@if $filename == logout {
 		$char: "\E007";
 	}
-	@if $filename == user-edit {
+	@if $filename == search {
 		$char: "\E008";
+	}
+	@if $filename == user-edit {
+		$char: "\E009";
 	}
 
 	@return $char;
@@ -82,6 +85,9 @@
 .icon-heart-full {
 	@include icon(heart-full);
 }
+.icon-image {
+	@include icon(image);
+}
 .icon-logout {
 	@include icon(logout);
 }
@@ -91,4 +97,3 @@
 .icon-user-edit {
 	@include icon(user-edit);
 }
-

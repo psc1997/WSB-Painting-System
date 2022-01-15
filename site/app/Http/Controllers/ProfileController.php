@@ -72,11 +72,32 @@ class ProfileController extends Controller
 
         // Jeżeli user istnieje to zaciągamy jego profil
         if (isset($user_id) && isset(Auth::user()->id) && $user_id == Auth::user()->id) {
-            $user_profile =  DB::table('users')
+            // ================
+            // = INFO PROFILOWE
+            $user_profile = DB::table('users')
+                ->select(
+                    'name',
+                    'first_name',
+                    'last_name',
+                    'description',
+                )
                 ->where('id', $user_id)
                 ->first();
 
-            // TODO:
+            $user_paintings = ProfileController::getPaintings($user_id);
+
+            // ================
+            // = AVATAR I TŁO
+            $user_images = [
+                'avatar' => (file_exists(public_path('storage/profile-avatar/'.$user_id.'.png'))) ? '/storage/profile-avatar/'.$user_id.'.png' : '/dist/img/profile-default-avatar.png',
+            ];
+
+            // Zwracamy widok
+            return view('profile.edit', [
+                'user_profile' => $user_profile,
+                'user_paintings' => $user_paintings,
+                'user_images' => $user_images,
+            ]);
         } else {
             abort(404);
         }
@@ -107,7 +128,34 @@ class ProfileController extends Controller
         if (Auth::user()->name == $username) {
             if (isset($_POST['form_type'])) {
 
-                // TODO:
+                switch ($_POST['form_type']) {
+
+                    // Aktualizujemy konto
+                    case 'update_profile':
+                        $update = [
+                            'first_name' => $_POST['user_first_name'],
+                            'last_name' => $_POST['user_last_name'],
+                            'description' => $_POST['user_description'],
+                        ];
+
+                        $query = DB::table('users')
+                            ->where('id', Auth::id())
+                            ->update($update);
+
+                        if ($query) {
+                            $is_success = true;
+                        }
+                        break;
+
+                    // Aktualizujemy obraz przypisany do profilu
+                    case 'update_painting':
+                        
+                        break;
+                    
+                    default:
+                        $is_success = false;
+                        break;
+                }
             }
 
             if ($is_success) {
