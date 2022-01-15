@@ -121,11 +121,18 @@ class ProfileController extends Controller
         }
     }
 
+    /**
+     * Update user profile.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
     public function update(Request $request, string $username)
     {
         $is_success = false;
 
         if (Auth::user()->name == $username) {
+
             if (isset($_POST['form_type'])) {
 
                 switch ($_POST['form_type']) {
