@@ -15,6 +15,11 @@
         background-color: transparent;
         text-decoration: none;
     }
+
+    &:disabled {
+        opacity: 0.5;
+        pointer-events: none;
+    }
     
     &--ghost {
         color: $first-color-0;
@@ -33,5 +38,9 @@
 
     &--big {
         padding: 16px 32px;
+    }
+
+    &--small {
+        padding: 4px 8px;
     }
 }

@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-    <section class="admin">
+    <section class="admin-users-index">
         <div class="container">
 
             @if(session()->has('message'))
                 <div class="row">
                     <div class="col-24">
-                        <div class="alert alert-danger admin__alert-danger">
+                        <div class="alert alert-danger admin-users-index__alert-danger">
                             {{ session()->get('message') }}
                         </div>
                     </div>
@@ -16,22 +16,33 @@
 
             <div class="row">
                 <div class="col-24">
-                    <table class="table table-sm admin__table">
+                    <h1 class="admin-users-index__title">
+                        Zarządzanie użytkownikami
+                    </h1>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-24 col-md-16 offset-0 offset-md-4">
+                    <table class="table table-sm admin-users-index__table">
                         <thead>
                             <tr>
                                 <th>
                                     Użytkownik
                                 </th>
-                                <th class="admin__table-row admin__table-row--user-role">
-                                    Uprawienia administratora
+                                <th class="admin-users-index__table-row admin-users-index__table-row--role">
+                                    Uprawnienia
                                 </th>
-                                <th class="admin__table-row admin__table-row--show-profile">
+                                <th class="admin-users-index__table-row admin-users-index__table-row--show-profile">
                                     <!-- ACTION -->
                                 </th>
-                                <th class="admin__table-row admin__table-row--edit">
+                                <th class="admin-users-index__table-row admin-users-index__table-row--edit">
                                     <!-- CRUD -->
                                 </th>
-                                <th class="admin__table-row admin__table-row--delete">
+                                <th class="admin-users-index__table-row admin-users-index__table-row--lock">
+                                    <!-- CRUD -->
+                                </th>
+                                <th class="admin-users-index__table-row admin-users-index__table-row--delete">
                                     <!-- CRUD -->
                                 </th>
                             </tr>
@@ -42,11 +53,11 @@
                                     <td>
                                         {{ $user->name }}
                                     </td>
-                                    <td class="text-center">
+                                    <td>
                                         @if ($user->is_administrator)
-                                            <span class="admin__item-color-square admin__item-color-square--true"></span>
+                                            Administrator
                                         @else
-                                            <span class="admin__item-color-square admin__item-color-square--false"></span>
+                                            Użytkownik
                                         @endif
                                     </td>
                                     <td>
@@ -64,6 +75,15 @@
                                             {{ csrf_field() }}
                                             @method('DELETE')
                                             <button class="button button--small" type="submit" disabled>
+                                                <span class="icon icon-delete mr-1"></span> Zablokuj
+                                            </button>
+                                        </form>
+                                    </td>
+                                    <td>
+                                        <form action="{{ route('users.destroy', $user->id)}}" method="post">
+                                            {{ csrf_field() }}
+                                            @method('DELETE')
+                                            <button class="button button--small" type="submit" {{ ($user->is_administrator) ? 'disabled' : ''; }}>
                                                 <span class="icon icon-delete mr-1"></span> Usuń
                                             </button>
                                         </form>
@@ -72,13 +92,10 @@
                             @endforeach
                         </tbody>
                     </table>
-                    <div class="admin__pagination">
+                    <div class="admin-users-index__pagination">
                         {!! $users->links() !!}
                     </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-24">
+
                     <a href="{{ route('users.create') }}" class="button">
                         <span class="icon icon-plus mr-1"></span> Dodaj nowego użytkownika
                     </a>

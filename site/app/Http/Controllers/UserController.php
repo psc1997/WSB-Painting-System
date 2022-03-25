@@ -59,7 +59,6 @@ class UserController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'city' => ($request->city) ? $request->city : null,
             'description' => ($request->description) ? $request->description : null,
             'is_administrator' => ($request->is_administrator) ? true : false,
         ]);
@@ -108,7 +107,6 @@ class UserController extends Controller
         $update = [
             'name' => $request->name,
             'email' => $request->email,
-            'city' => ($request->city) ? $request->city : null,
             'description' => ($request->description) ? $request->description : null,
             'is_administrator' => ($request->is_administrator) ? true : false,
         ];

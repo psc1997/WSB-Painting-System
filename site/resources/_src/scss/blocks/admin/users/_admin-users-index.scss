@@ -1,0 +1,43 @@
+.admin-users-index {
+    padding: 240px 0;
+
+    &__title {
+        margin-bottom: 32px;
+        color: $white;
+        font-family: $second-font;
+        font-weight: 700;
+        text-align: center;
+
+        @include rfs(48px);
+    }
+
+    &__alert-danger {
+        
+    }
+
+    &__table {
+        color: $white;
+    }
+
+    &__table-row {
+        &--role {
+            width: 240px;
+        }
+
+        &--show-profile {
+            width: 134px;
+        }
+
+        &--edit {
+            width: 82px;
+        }
+
+        &--lock {
+            width: 100px;
+        }
+
+        &--delete {
+            width: 72px;
+        }
+    }
+}
