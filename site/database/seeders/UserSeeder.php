@@ -21,12 +21,14 @@ class UserSeeder extends Seeder
                 'name' => 'admin',
                 'email' => 'admin@localhost.local',
                 'password' => Hash::make('qwerty123'),
+                'is_administrator' => 1,
                 'created_at' => now(),
             ],
             [
                 'name' => 'user',
                 'email' => 'user@localhost.local',
                 'password' => Hash::make('qwerty123'),
+                'is_administrator' => 0,
                 'created_at' => now(),
             ]
         ]);

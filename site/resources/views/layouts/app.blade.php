@@ -14,7 +14,6 @@
 
     <!-- Styles -->
     <link href="{{ asset('dist/css/main.css') }}" rel="stylesheet">
-
 </head>
 
 <body>
@@ -34,38 +33,47 @@
                         <div class="collapse navbar-collapse" id="navbarHeader">
                             <ul class="navbar-nav ml-auto">
                                 @guest
-                                @if (Route::has('login'))
-                                <li class="nav-item header__nav-item">
-                                    <a href="{{ route('login') }}" class="nav-link header__nav-link">
-                                        <span class="icon icon-acount"></span><br>
-                                        Zaloguj się
-                                    </a>
-                                </li>
-                                @endif
-                                @else
-                                {{-- <li class="nav-item header__nav-item">
-                                            <a href="#" class="nav-link header__nav-link">
-                                                <span class="icon icon-heart-empty"></span><br>
-                                                Ulubione
+                                    @if (Route::has('login'))
+                                        <li class="nav-item header__nav-item">
+                                            <a href="{{ route('login') }}" class="nav-link header__nav-link">
+                                                <span class="icon icon-account"></span><br>
+                                                Zaloguj się
                                             </a>
-                                        </li> --}}
-                                <li class="nav-item header__nav-item">
-                                    <a href="{{ route('profile.index', Auth::user()->name) }}" class="nav-link header__nav-link">
-                                        <span class="icon icon-acount"></span><br>
-                                        Profil
-                                    </a>
-                                </li>
-                                <li class="nav-item header__nav-item">
-                                    <a href="{{ route('logout') }}" class="nav-link header__nav-link"
-                                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                        <span class="icon icon-logout"></span><br>
-                                        Wyloguj
-                                    </a>
-            
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </li>
+                                        </li>
+                                    @endif
+                                @else
+                                    @auth
+                                        @if(Auth::user()->is_administrator == 1)
+                                            <li class="nav-item header__nav-item">
+                                                <a href="{{ route('admin.index') }}" class="nav-link header__nav-link">
+                                                    <span class="icon icon-tools"></span><br>
+                                                    Panel administratora
+                                                </a>
+                                            </li>
+                                        @endif
+                                    @endauth
+                                    {{-- <li class="nav-item header__nav-item">
+                                        <a href="#" class="nav-link header__nav-link">
+                                            <span class="icon icon-heart-empty"></span><br>
+                                            Ulubione
+                                        </a>
+                                    </li> --}}
+                                    <li class="nav-item header__nav-item">
+                                        <a href="{{ route('profile.index', Auth::user()->name) }}" class="nav-link header__nav-link">
+                                            <span class="icon icon-account"></span><br>
+                                            Profil
+                                        </a>
+                                    </li>
+                                    <li class="nav-item header__nav-item">
+                                        <a href="{{ route('logout') }}" class="nav-link header__nav-link"
+                                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                            <span class="icon icon-logout"></span><br>
+                                            Wyloguj
+                                        </a>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                            @csrf
+                                        </form>
+                                    </li>
                                 @endguest
                             </ul>
                         </div>

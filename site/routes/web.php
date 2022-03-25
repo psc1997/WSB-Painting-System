@@ -33,10 +33,24 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+// ===========================
+// = Profil Użytkownika
+// ===========================
 Route::prefix('/profile')->group(function () {
     Route::get('/{username}', 'App\Http\Controllers\ProfileController@index')->name('profile.index');
     Route::get('/{username}/edit', 'App\Http\Controllers\ProfileController@edit')->name('profile.edit');
     Route::post('/{username}/edit', 'App\Http\Controllers\ProfileController@update')->name('profile.update');
     Route::post('/{username}/store', 'App\Http\Controllers\ProfileController@store')->name('profile.store');
     Route::delete('/destroy/{id}', 'App\Http\Controllers\ProfileController@destroy')->name('profile.destroy');
+});
+
+// ===========================
+// = Panel Administratora
+// ===========================
+Route::prefix('/admin')->group(function () {
+    Route::get('/', function () {
+        return view('admin/index');
+    })->name('admin.index');
+
+    Route::resource('/users', 'App\Http\Controllers\UserController');
 });

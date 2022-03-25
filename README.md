@@ -3,6 +3,9 @@
 ## Opis strony
 Strona Internetowa poświęcona artystom. Dzięki niej artyści mogą pokazać światu swoje obrazy lub inną twórczość kreatywną.
 
+| Laravel Framework 8.67.0 |
+|-|
+
 # Zaplecze technologiczne
 ## Front-end
 ### CSS

@@ -33,7 +33,7 @@
                                     Edytuj
                                 </div>
                             </a>
-                            <a href="{{ route('profile.edit', Auth::user()->name) }}" class="profile-header__button-edit">
+                            <a href="#" class="profile-header__button-edit">
                                 <div>
                                     <span class="icon icon-image profile-header__button-edit-icon"></span><br>
                                     Dodaj

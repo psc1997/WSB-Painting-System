@@ -28,7 +28,7 @@
 @function icon-char($filename) {
 	$char: "";
 
-	@if $filename == acount {
+	@if $filename == account {
 		$char: "\E001";
 	}
 	@if $filename == circle-arrow-right {
@@ -52,8 +52,11 @@
 	@if $filename == search {
 		$char: "\E008";
 	}
-	@if $filename == user-edit {
+	@if $filename == tools {
 		$char: "\E009";
+	}
+	@if $filename == user-edit {
+		$char: "\E00A";
 	}
 
 	@return $char;
@@ -70,8 +73,8 @@
 	}
 }
 
-.icon-acount {
-	@include icon(acount);
+.icon-account {
+	@include icon(account);
 }
 .icon-circle-arrow-right {
 	@include icon(circle-arrow-right);
@@ -93,6 +96,9 @@
 }
 .icon-search {
 	@include icon(search);
+}
+.icon-tools {
+	@include icon(tools);
 }
 .icon-user-edit {
 	@include icon(user-edit);
