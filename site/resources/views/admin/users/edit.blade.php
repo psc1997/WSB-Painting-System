@@ -6,9 +6,31 @@
 
             <div class="row">
                 <div class="col-24">
-                    <h1 class="admin-users-index__title">
-                        Zarządzanie użytkownikami - Edycja
-                    </h1>
+                    <div class="admin-header-title__box">
+                        <h1 class="admin-header-title__title">
+                            Edycja użytkownika
+                        </h1>
+                        <ol class="breadcrumb admin-header-title__breadcrumbs">
+                            <li class="breadcrumb-item admin-header-title__breadcrumb-item">
+                                <a href="{{ route('admin.index') }}">
+                                    Panel administratora
+                                </a>
+                            </li>
+                            <li class="breadcrumb-item admin-header-title__breadcrumb-item">
+                                <a href="{{ route('users.index') }}">
+                                    Zarządzanie użytkownikami
+                                </a>
+                            </li>
+                            <li class="breadcrumb-item admin-header-title__breadcrumb-item is-active" aria-current="page">
+                                Edycja użytkownika
+                            </li>
+                        </ol>
+                        @if(session()->has('message'))
+                            <div class="admin-header-title__alert">
+                                {{ session()->get('message') }}
+                            </div>
+                        @endif
+                    </div>
                 </div>
             </div>
 
@@ -80,7 +102,7 @@
                                 </div>
 
                                 <button type="submit" class="button mt-3">
-                                    <span class="icon icon-save mr-1"></span> Zapisz zmiany
+                                    Zapisz zmiany
                                 </button>
 
                             </form>

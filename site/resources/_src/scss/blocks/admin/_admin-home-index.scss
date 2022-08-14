@@ -1,15 +1,19 @@
 .admin-home-index {
-    // padding: 120px 0;
     padding: 240px 0;
 
     &__title {
+        display: inline-block;
+        width: 100%;
         margin-bottom: 32px;
+        padding: 24px 32px;
+        background-color: $dark-2;
         color: $white;
+        border-radius: 8px;
         font-family: $second-font;
         font-weight: 700;
         text-align: center;
 
-        @include rfs(48px);
+        @include rfs(32px);
     }
 
     &__button-edit {
@@ -17,6 +21,7 @@
         position: relative;
         background-color: $dark-2;
         color: $white;
+        border-radius: 8px;
         font-weight: 700;
         text-align: center;
         transition: background-color 0.25s;

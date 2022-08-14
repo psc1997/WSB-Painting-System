@@ -1,0 +1,51 @@
+.admin-header-title {
+    &__box {
+        display: inline-block;
+        width: 100%;
+        margin-bottom: 32px;
+        border-radius: 8px;
+        color: $white;
+        overflow: hidden;
+    }
+
+    &__title {
+        display: inline-block;
+        width: 100%;
+        margin-bottom: 0;
+        padding: 24px 32px;
+        background-color: $dark-2;
+        font-family: $second-font;
+        font-weight: 700;
+        text-align: center;
+
+        @include rfs(32px);
+    }
+
+    &__breadcrumbs {
+        margin-bottom: 0;
+        padding: 16px 32px;
+        border-radius: 0;
+        background-color: lighten($dark-2, 5);
+    }
+
+    &__breadcrumb-item {
+        color: $white;
+
+        &::before {
+            color: $white !important;
+        }
+
+        a {
+            color: $white;
+        }
+
+        &.is-active {
+            font-weight: 700;
+        }
+    }
+
+    &__alert {
+        padding: 16px 32px;
+        background-color: lighten($dark-2, 30);
+    }
+}

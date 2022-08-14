@@ -1,7 +1,5 @@
 @extends('layouts.app')
-
-{{-- @section('title', 'PaintIT - Home') --}}
-
+@section('title', 'PaintIT - Panel administratora')
 @section('content')
     <section class="admin-home-index">
         <div class="container">

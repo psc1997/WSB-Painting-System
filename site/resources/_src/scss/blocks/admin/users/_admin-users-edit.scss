@@ -1,27 +1,10 @@
 .admin-users-edit {
-    padding: 120px 0;
-
-    &__title {
-        margin-bottom: 32px;
-        color: $white;
-        font-family: $second-font;
-        font-weight: 700;
-        text-align: center;
-
-        @include rfs(48px);
-    }
-
-    &__alert-danger {
-
-    }
+    padding: 240px 0;
 
     &__card {
-        border: 2px solid $white;
+        padding: 24px 32px;
         border-radius: 0;
-        background-color: $black;
-    }
-
-    &__card-body {
+        background-color: $dark-2;
         color: $white;
     }
 

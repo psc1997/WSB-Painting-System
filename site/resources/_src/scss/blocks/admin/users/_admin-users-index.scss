@@ -1,43 +1,37 @@
 .admin-users-index {
     padding: 240px 0;
 
-    &__title {
-        margin-bottom: 32px;
-        color: $white;
-        font-family: $second-font;
-        font-weight: 700;
-        text-align: center;
-
-        @include rfs(48px);
-    }
-
-    &__alert-danger {
-        
-    }
-
     &__table {
+        margin-bottom: 30px;
         color: $white;
+
+        tr {
+            background-color: lighten($dark-2, 10);
+
+            &:nth-of-type(even) {
+                background-color: lighten($dark-2, 5);
+            }
+        }
+
+        th {
+            border: 0 !important;
+            padding: 8px 16px;
+            background-color: $dark-2;
+        }
+
+        td {
+            border: 0;
+            padding: 8px 16px;
+        }
     }
 
-    &__table-row {
+    &__table-col {
         &--role {
             width: 240px;
         }
 
-        &--show-profile {
-            width: 134px;
-        }
-
-        &--edit {
-            width: 82px;
-        }
-
-        &--lock {
-            width: 100px;
-        }
-
-        &--delete {
-            width: 72px;
+        &--actions {
+            width: 450px;
         }
     }
 }
