@@ -52,12 +52,12 @@
                                             </li>
                                         @endif
                                     @endauth
-                                    {{-- <li class="nav-item header__nav-item">
-                                        <a href="#" class="nav-link header__nav-link">
+                                    <li class="nav-item header__nav-item">
+                                        <a href="{{ route('favorites.index') }}" class="nav-link header__nav-link">
                                             <span class="icon icon-heart-empty"></span><br>
                                             Ulubione
                                         </a>
-                                    </li> --}}
+                                    </li>
                                     <li class="nav-item header__nav-item">
                                         <a href="{{ route('profile.index', Auth::user()->name) }}" class="nav-link header__nav-link">
                                             <span class="icon icon-account"></span><br>

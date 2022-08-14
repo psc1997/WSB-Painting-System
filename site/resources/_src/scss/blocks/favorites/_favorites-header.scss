@@ -1,0 +1,14 @@
+.favorites-header{
+    padding: 120px 0 10px 0;
+    &__title{
+        font-family: $first-font;
+        text-align: center;
+        color: $white;
+        font-family: $second-font;
+
+
+        @include rfs(30px);
+    }
+        
+
+}

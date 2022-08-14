@@ -22,11 +22,11 @@
     &__nav-link {
         color: $white;
         font-family: $second-font;
-        font-weight: 600;
+        font-weight: 500;
         text-align: center;
         transition: color 0.25s;
 
-        @include rfs(18px);
+        @include rfs(13px);
 
         &:hover {
             color: $first-color-1;
