@@ -24,7 +24,7 @@ add_action('init', static function () {
 
     $args = [
         'labels'                => $labels,
-        'supports'              => ['title', 'excerpt', 'thumbnail'],
+        'supports'              => ['title'],
         'hierarchical'          => false,
         'public'                => true,
         'show_ui'               => true,
@@ -40,9 +40,133 @@ add_action('init', static function () {
         'publicly_queryable'    => true,
         'rewrite'               => $rewrite,
         'capability_type'       => 'post',
-        // 'rest_base'             => 'device',
+        // 'rest_base'             => 'painting',
         // 'rest_controller_class' => 'WP_REST_Posts_Controller',
     ];
 
     register_post_type('painting', $args);
 });
+
+/**
+ * Funkcja definiująca kategorie dla 'Obraz'.
+ *
+ * @version 1.0.0
+ */
+add_action('init', static function () {
+    $labels = [
+        'name'                  => 'Kategoria',
+        'singular_name'         => 'Kategoria',
+        'search_items'          => 'Szukaj kategorii',
+        'all_items'             => 'Wszystkie kategorie',
+        'edit_item'             => 'Edytuj kategorię',
+        'update_item'           => 'Aktualizuj kategorię',
+        'add_new_item'          => 'Dodaj nową kategorię',
+    ];
+
+    $rewrite = [
+        'slug'                  => 'kategoria',
+        'with_front'            => true,
+    ];
+
+    $args = [
+        'public' => true,
+        'hierarchical' => true,
+        'labels' => $labels,
+        'show_ui' => true,
+        'show_admin_column' => true,
+        'query_var' => true,
+        'rewrite' => $rewrite,
+    ];
+
+    register_taxonomy('painting_category', 'painting', $args);
+});
+
+/**
+ * Funkcja definiująca technikę malunku dla 'Obraz'.
+ *
+ * @version 1.0.0
+ */
+add_action('init', static function () {
+    $labels = [
+        'name'                  => 'Technika wykonania',
+        'singular_name'         => 'Technika wykonania',
+        'search_items'          => 'Szukaj techniki wykonania',
+        'all_items'             => 'Wszystkie techniki wykonania',
+        'edit_item'             => 'Edytuj technikę wykonania',
+        'update_item'           => 'Aktualizuj technikę wykonania',
+        'add_new_item'          => 'Dodaj nową technikę wykonanai',
+    ];
+
+    $rewrite = [
+        'slug'                  => 'technika',
+        'with_front'            => true,
+    ];
+
+    $args = [
+        'public' => true,
+        'hierarchical' => true,
+        'labels' => $labels,
+        'show_ui' => true,
+        'show_admin_column' => true,
+        'query_var' => true,
+        'rewrite' => $rewrite,
+    ];
+
+    register_taxonomy('painting_type', 'painting', $args);
+});
+
+/**
+ * Funkcja definiująca autorów dla 'Obraz'.
+ *
+ * @version 1.0.0
+ */
+add_action('init', static function () {
+    $labels = [
+        'name'                  => 'Autor',
+        'singular_name'         => 'Autor',
+        'search_items'          => 'Szukaj autora',
+        'all_items'             => 'Wszyscy autorzy',
+        'edit_item'             => 'Edytuj autora',
+        'update_item'           => 'Aktualizuj autora',
+        'add_new_item'          => 'Dodaj nowego autora',
+    ];
+
+    $rewrite = [
+        'slug'                  => 'autor',
+        'with_front'            => true,
+    ];
+
+    $args = [
+        'hierarchical' => true,
+        'labels' => $labels,
+        'show_ui' => true,
+        'show_admin_column' => true,
+        'query_var' => true,
+        'rewrite' => $rewrite,
+    ];
+
+    register_taxonomy('painting_author', 'painting', $args);
+});
+
+/**
+ * Dodanie dodatkowej kolumny do listowania w panelu administratora.
+ *
+ * @version 1.0.0
+ */
+add_filter('manage_painting_posts_columns', static function ($columns) {
+    $columns = array_merge([
+        'painting_thumbnail' => 'Miniaturka',
+    ], $columns);
+
+    return $columns;
+});
+
+add_action('manage_painting_posts_custom_column', static function ($column, $post_id) {
+    switch ($column) {
+        case 'painting_thumbnail':
+            $temp = get_field('painting_image', $post_id);
+            $post_thumbnail = (!empty($temp)) ? $temp['sizes']['thumbnail'] : get_template_directory_uri() . '/dist/img/thumbnail-paintings.jpg';
+            echo '<img src="' . esc_url($post_thumbnail) . '" class="admin-panel__painting-thumbnail">';
+            break;
+    }
+}, 10, 2);

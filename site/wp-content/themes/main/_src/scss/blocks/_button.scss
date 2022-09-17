@@ -1,49 +1,46 @@
 .button {
     display: inline-block;
-    padding: 10px 30px;
-    border: 0;
-    border-radius: 4px;
+    border: 1px solid $first-color-0;
+    padding: 8px 16px;
+    background-color: $first-color-0;
     color: $white;
-    background-color: $first-color;
-    font-family: $first-font;
-    font-weight: 700;
-    transition: 
-        color 0.25s,
-        background-color 0.25s;
+    font-family: $second-font;
+    font-weight: 600;
+    transition: all 0.25s;
 
     @include rfs(16px);
 
-    &:hover,
-    &:active {
-        color: $white;
-        background-color: $first-color-lite;
+    &:hover {
+        color: $first-color-0;
+        background-color: transparent;
         text-decoration: none;
     }
 
-    &:focus,
-    &:active {
-        outline: none;
+    &:disabled {
+        opacity: 0.5;
+        pointer-events: none;
+    }
+    
+    &--ghost {
+        color: $first-color-0;
+        background-color: transparent;
+
+        &:hover {
+            color: $white;
+            background-color: $first-color-0;
+        }
     }
 
-    &--full-width {
+    &--full {
+        display: inline-block;
         width: 100%;
-        text-align: center;
+    }
+
+    &--big {
+        padding: 16px 32px;
     }
 
     &--small {
-        padding: 5px 15px;
-
-        @include rfs(12px);
-    }
-
-    &--ghost {
-        border: 2px solid $first-color;
-        background-color: transparent;
-        color: $first-color;
-
-        &:hover {
-            background-color: $first-color;
-            color: $white;
-        }
+        padding: 4px 8px;
     }
 }

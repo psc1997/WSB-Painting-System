@@ -1,256 +1,41 @@
 .header {
-    $root: &;
-
-    &__wrapper {
-        padding: 40px 0 25px 0;
-        border-bottom: 2px solid $first-color;
-
-        @include media-breakpoint-down (md) {
-            padding-top: 20px;
-        }
-    }
-
-    &__logo {
-        display: inline-block;
-        color: $first-color;
-
-        &:hover {
-            color: $first-color;
-            text-decoration: none;
-        }
-    }
-
-    &__pretitle {
-        margin-bottom: 0;
-        font-family: $first-font;
-        font-weight: 900;
-        text-align: center;
-        text-transform: uppercase;
-        line-height: 1;
-
-        @include rfs(36px);
-
-        @include media-breakpoint-down (md) {
-            @include rfs(20px);
-        }
-    }
-
-    &__title {
-        margin-bottom: 25px;
-        font-family: $first-font;
-        font-weight: 900;
-        text-transform: uppercase;
-        text-align: center;
-        line-height: 1;
-
-        @include rfs(80px);
-
-        @include media-breakpoint-down (md) {
-            @include rfs(48px);
-        }
-
-        @include media-breakpoint-down (sm) {
-            margin-bottom: 0;
-        }
-    }
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: auto;
+    width: 100%;
+    background-color: rgba($dark, 0.5);
+    border-bottom: 1px solid $dark;
+    z-index: 999;
 
     &__navbar {
-        @include media-breakpoint-down (sm) {
-            display: none;
-        }
-    }
-
-    &__nav {
-        // Type something...
+        padding: 0;
     }
 
     &__nav-item {
-        &:not(:last-of-type) {
-            margin-right: 15px;
-        }
+        padding: 10px 30px;
 
-        &.current_page_item {
-            #{$root}__nav-link {
-                color: $first-color;
-                border-color: $first-color;
-            }
+        &:not(:last-of-type) {
+            border-right: 1px solid $white;
         }
     }
 
     &__nav-link {
-        padding: 10px 30px;
-        border: 2px solid transparent;
-        border-radius: 4px;
-        color: $first-color-lite;
-        font-family: $first-font;
-        font-weight: 700;
-        transition:
-            color 0.25s,
-            border-color 0.25s;
-
-        &:hover,
-        &:active {
-            border-color: $first-color;
-            color: $first-color;
-            text-decoration: none;
-        }
-    }
-
-    // ===========================
-    // Floating mobile menu bar
-    // ===========================
-    &__floating-menu-bar {
-        display: none;
-        position: fixed;
-        left: 0;
-        bottom: 0;
-        height: auto;
-        width: 100%;
-        border-top: 1px solid $first-color;
-        background-color: $second-color;
-        z-index: 250;
-
-        @include media-breakpoint-down (sm) {
-            display: block;
-        }
-    }
-
-    &__floating-menu-bar-container {
-        max-width: 375px;
-    }
-
-    &__floating-menu-bar-item {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        padding: 18px 8px;
-        color: $first-color;
-        font-family: $first-font;
-        font-weight: 400;
+        color: $white;
+        font-family: $second-font;
+        font-weight: 600;
         text-align: center;
         transition: color 0.25s;
 
-        @include rfs(11px);
+        @include rfs(18px);
 
-        &.is-current-page,
         &:hover {
-            color: $first-color-lite;
-            text-decoration: none;
-
-            #{$root}__floating-menu-bar-item-icon {
-                &::before {
-                    color: $first-color-lite;
-                }
-            }
-
-            #{$root}__floating-menu-bar-item-menu-icon {
-                span {
-                    background-color: $first-color-lite;
-                }
-            }
+            color: $first-color-1;
         }
     }
 
-    &__floating-menu-bar-item-icon {
-        display: inline-block;
-        margin-bottom: 4px;
-
-        &::before {
-            color: $first-color;
-            transition: color 0.25s;
-
-            @include rfs(24px);
-        }
-    }
-
-    &__floating-menu-bar-item-menu {
-        @extend #{$root}__floating-menu-bar-item;
-
-        position: relative;
-        height: 100%;
-
-        &.is-opened {
-            #{$root}__floating-menu-bar-item-menu-icon-box {
-                height: 40px;
-                width: 40px;
-                top: 20px;
-                background-color: $first-color;
-                border-radius: 50%;
-            }
-
-            #{$root}__floating-menu-bar-item-menu-icon {
-                height: 18px;
-
-                span {
-                    background-color: $first-color;
-
-                    &:nth-child(1) {
-                        transform: rotate(45deg) translate(6px, 6px);
-                    }
-
-                    &:nth-child(2) {
-                        opacity: 0;
-                    }
-
-                    &:nth-child(3) {
-                        transform: rotate(-45deg) translate(5px, -5px);
-                    }
-                }
-            }
-
-            #{$root}__floating-menu-bar-item-menu-text {
-                opacity: 0;
-            }
-        }
-    }
-
-    &__floating-menu-bar-item-menu-icon-box {
-        display: flex;
-        position: absolute;
-        top: 18px;
-        justify-content: center;
-        align-items: center;
-        height: 24px;
-        width: 24px;
-        transition:
-            height 0.25s,
-            width 0.25s,
-            margin-bottom 0.25s,
-            background-color 0.25s;
-    }
-
-    &__floating-menu-bar-item-menu-icon {
-        position: relative;
-        height: 14px;
-        width: 18px;
-        transition: height 0.25s;
-
-        span {
-            position: absolute;
-            left: 0;
-            height: 2px;
-            width: 100%;
-            border-radius: 2px;
-            background-color: $first-color;
-            transition: all 0.25s;
-
-            &:nth-child(1) {
-                top: 0;
-            }
-
-            &:nth-child(2) {
-                top: calc(50% - 1px);
-            }
-
-            &:nth-child(3) {
-                top: calc(100% - 2px);
-            }
-        }
-    }
-
-    &__floating-menu-bar-item-menu-text {
-        margin-top: auto;
-        transition: opacity 0.25s;
+    &__logo{
+        height: auto;
+        width: 150px;
     }
 }

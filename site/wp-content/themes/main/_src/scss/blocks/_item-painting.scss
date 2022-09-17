@@ -1,0 +1,73 @@
+.item-painting {
+    $root: &;
+
+    height: 100%;
+
+    &__card {
+        display: flex;
+        height: inherit;
+        background-color: $dark-1;
+        border: 2px solid $dark-2;
+        border-radius: 0;
+        transition: background-color 0.25s;
+
+        &:hover {
+            background-color: rgba($white, 0.4);
+            text-decoration: none;
+
+            #{$root}__card-image {
+                filter: brightness(1.1);
+            }
+        }
+    }
+
+    &__card-image {
+        transition: filter 0.25s;
+    }
+
+    &__card-body {
+        margin-bottom: auto;
+    }
+
+    &__card-title {
+        color: $white;
+        font-family: $first-font;
+        font-weight: 700;
+        text-align: center;
+
+        @include rfs(24px);
+    }
+
+    &__card-author {
+        margin-bottom: 8px;
+        color: rgba($white, 0.75);
+        font-family: $second-font;
+        font-weight: 400;
+        text-align: center;
+
+        @include rfs(16px);
+    }
+
+    &__card-specification {
+        margin-bottom: 4px;
+        color: rgba($white, 0.66);
+        font-family: $second-font;
+        font-weight: 400;
+        text-align: center;
+
+        @include rfs(16px);
+    }
+
+    &__card-footer {
+        // Type something...
+    }
+
+    &__card-tag {
+        display: inline-block;
+        padding: 4px 8px;
+        background-color: rgba($first-color-0, 0.75);
+        color: $white;
+
+        @include rfs(14px);
+    }
+}

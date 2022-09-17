@@ -42,64 +42,11 @@
         }
     }
 
-    &__table-description {
-        border-collapse: collapse;
-        border-spacing: 0;
-        width: 100%;
-        border: 1px solid #ddd;
-
-        th {
-            background-color: #666666;
-            color: $white;
-            text-align: left;
-        }
-
-        th,
-        td {
-            padding: 2px 8px;
-        }
-
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-    }
-
-    &__table-status {
-        @extend .admin-panel__table-description;
-
-        th {
-            background-color: #4472C4;
-            color: #FFF;
-        }
-
-        td.status-perfect {
-            background-color: #84a9e9;
-            color: #FFF;
-        }
-
-        td.status-good {
-            background-color: #C6EFCE;
-            color: #006100;
-        }
-
-        td.status-averge {
-            background-color: #FFEB9C;
-            color: #9C5700;
-        }
-
-        td.status-bad {
-            background-color: #FFC7CE;
-            color: #9C0006;
-        }
-    }
-
-    &__article-thumbnail,
-    &__device-thumbnail,
-    &__accessory-thumbnail {
-        height: 75px;
-        width: 75px;
+    &__painting-thumbnail {
+        height: 90px;
+        width: 90px;
         border: 2px solid #353b3f;
-        border-radius: 4px;
+        border-radius: 6px;
     }
 }
 
@@ -108,40 +55,8 @@
 // ======================
 .wp-list-table {
     tr {
-        th.column-article_thumbnail,
-        th.column-device_thumbnail,
-        th.column-accessory_thumbnail {
-            width: 70px;
-        }
-
-        th.column-device_is_visible,
-        th.column-accessory_is_visible {
-            width: 120px;
-        }
-
-        td.column-device_is_visible,
-        td.column-accessory_is_visible {
-            vertical-align: middle;
-
-            span {
-                display: inline-block;
-                height: 12px;
-                width: 12px;
-                margin-right: 5px;
-                margin-bottom: -2px;
-                border: 1px solid #a8a8a8;
-            }
-
-            // Status dostępności
-            span.status-true {
-                border-color: #99ca4a;
-                background-color: rgba(#99ca4a, 0.25);
-            }
-
-            span.status-false {
-                border-color: #f6959c;
-                background-color: rgba(#f6959c, 0.25);
-            }
+        th.column-painting_thumbnail {
+            width: 90px;
         }
     }
 }
@@ -150,13 +65,9 @@
 // = Ikony
 // ======================
 #adminmenu {
-    .menu-icon-article .wp-menu-image,
-    .menu-icon-device .wp-menu-image,
-    .menu-icon-accessory .wp-menu-image,
-    .menu-icon-company .wp-menu-image,
-    .menu-icon-faq .wp-menu-image {
+    .menu-icon-painting .wp-menu-image {
         &::before {
-            color: #35aaef !important;
+            color: #ff7272 !important;
         }
     }
 }

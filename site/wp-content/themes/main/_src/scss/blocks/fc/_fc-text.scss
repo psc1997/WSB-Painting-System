@@ -38,7 +38,7 @@
         }
 
         p {
-            color: $first-color;
+            color: $first-color-1;
             font-family: $second-font;
             font-weight: 400;
             line-height: 1.6;
@@ -56,16 +56,16 @@
 
         blockquote {
             padding-left: 16px;
-            border-left: 8px solid rgba($first-color-lite, 0.25);
+            border-left: 8px solid rgba($first-color-1, 0.25);
         }
 
         a {
-            color: $first-color;
-            border-bottom: 1px solid rgba($first-color-lite, 0.5);
+            color: $first-color-2;
+            border-bottom: 1px solid rgba($first-color-1, 0.5);
             transition: border-color 0.25s;
 
             &:hover {
-                border-color: $first-color;
+                border-color: $first-color-2;
                 text-decoration: none;
             }
         }
@@ -75,7 +75,7 @@
             max-width: 100%;
             border-radius: 4px;
             margin: 32px 0;
-            box-shadow: 0 0 16px -12px $first-color-lite;
+            box-shadow: 0 0 16px -12px $first-color-1;
         }
 
         a.image-wrapper {
@@ -110,7 +110,7 @@
             }
 
             figcaption {
-                color: rgba($first-color, 0.9);
+                color: rgba($first-color-1, 0.9);
                 font-family: $second-font;
                 font-weight: 500;
                 text-align: center;
@@ -140,16 +140,16 @@
             margin-bottom: 32px;
 
             tr {
-                background-color: rgba($first-color-lite, 0.15);
+                background-color: rgba($first-color-1, 0.15);
 
                 &:nth-of-type(2n) {
-                    background-color: rgba($first-color-lite, 0.05);
+                    background-color: rgba($first-color-1, 0.05);
                 }
 
                 th {
                     border: 0 !important;
                     padding: 12px 8px !important;
-                    background-color: rgba($first-color-lite, 0.30);
+                    background-color: rgba($first-color-1, 0.30);
                 }
     
                 td {

@@ -1,0 +1,65 @@
+<?php
+    $painting = $args['painting'];
+    $image = get_field('painting_image', $painting->ID);
+    $size = get_field('painting_size', $painting->ID);
+    $authors = wp_get_post_terms($painting->ID, 'painting_author');
+    $types = wp_get_post_terms($painting->ID, 'painting_type');
+    $categories = wp_get_post_terms($painting->ID, 'painting_category', ['number' => 4]);
+?>
+
+<div class="item-painting">
+    <a href="<?= esc_url(get_permalink($painting->ID)); ?>" class="card item-painting__card">
+        <?= wp_get_attachment_image($image['ID'], 'thumbnail_painting', false, ['class' => 'img item-painting__card-image']); ?>
+        <div class="card-body item-painting__card-body">
+
+            <?php if (!empty($painting->post_title)) : ?>
+                <h5 class="card-title item-painting__card-title">
+                    <?= esc_html($painting->post_title); ?>
+                </h5>
+            <?php endif; ?>
+
+            <?php
+                if (!empty($authors)) :
+                foreach ($authors as $key => $author) :
+            ?>
+                <h6 class="card-title item-painting__card-author">
+                    <?= esc_html($author->name); ?>
+                </h6>
+            <?php
+                endforeach;
+                endif;
+            ?>
+
+            <?php if (!empty($size['height'] && !empty($size['width']))) : ?>
+                <p class="item-painting__card-specification">
+                    <?= esc_html($size['height']); ?> x <?= esc_html($size['width']); ?> cm
+                </p>
+            <?php endif; ?>
+
+            <?php
+                if (!empty($types)) :
+                foreach ($types as $key => $type) :
+            ?>
+                <p class="item-painting__card-specification">
+                    <?= esc_html($type->name); ?>
+                </p>
+            <?php
+                endforeach;
+                endif;
+            ?>
+        </div>
+        <div class="card-footer">
+            <?php
+                if (!empty($categories)) :
+                foreach ($categories as $key => $category) :
+            ?>
+                <span class="item-painting__card-tag">
+                    <?= esc_html($category->name); ?>
+                </span>
+            <?php
+                endforeach;
+                endif;
+            ?>
+        </div>
+    </a>
+</div>

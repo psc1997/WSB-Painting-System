@@ -12,7 +12,7 @@ html {
 }
 
 body {
-    background-color: $second-color;
+    background-color: $white;
     overflow-x: hidden;
 }
 
@@ -27,11 +27,4 @@ p {
 
 .icon {
     vertical-align: middle;
-}
-
-.col-lg-five-elements {
-    @include media-breakpoint-up (xl) {
-        flex: 0 0 19.999%;
-        max-width: 19.999%;
-    }
 }

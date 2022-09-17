@@ -18,6 +18,7 @@ Strona Internetowa poświęcona artystom. Dzięki niej artyści mogą pokazać �
 * [JavaScript Cookie](https://github.com/js-cookie/js-cookie)
 * [Lightbox2](https://lokeshdhakar.com/projects/lightbox2/)
 * [SweetAlert2](https://sweetalert2.github.io/)
+* [typed.js]
 
 ## Back-end
 * [Wordpress Documentation](https://codex.wordpress.org/)

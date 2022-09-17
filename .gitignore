@@ -19,3 +19,6 @@ site
 !/site/wp-content/themes/main/
 !/site/wp-content/plugins
 /site/wp-content/plugins/*
+
+# Additional
+site/wp-content/themes/main/_src/video/home-background.mp4

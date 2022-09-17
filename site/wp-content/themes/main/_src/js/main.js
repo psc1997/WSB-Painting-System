@@ -4,14 +4,18 @@ import 'lightbox2';
 import Swal from 'sweetalert2';
 
 import makeCookies from './modules/cookie-info';
+import makeHomeWelcome from './modules/home-welcome';
 import makeHotspotsLogic from './modules/hotspots';
+import makeSliders from './modules/sliders';
 import makeSmoothScrollLogic from './modules/smooth-scroll';
 
 window.Swal = Swal;
 
 const documentReady = () => {
     makeCookies();
+    makeHomeWelcome();
     makeHotspotsLogic();
+    makeSliders();
     makeSmoothScrollLogic();
 };
 
