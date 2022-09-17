@@ -1,0 +1,11 @@
+.fc-text-two-cols {
+    margin-bottom: 56px;
+
+    &__text_wyswig {
+        @extend .fc-text__text-wyswig;
+
+        ul {
+            margin-bottom: 0;
+        }
+    }
+}

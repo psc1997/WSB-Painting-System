@@ -1,0 +1,40 @@
+.fc-infobox {
+    $root: &;
+
+    margin-bottom: 32px;
+
+    &__box {
+        padding: 16px 32px;
+        border-radius: 4px;
+        background-color: rgba($first-color-lite, 0.25);
+
+        &--important {
+            background-color: $red;
+
+            #{$root}__text-wyswig {
+                p {
+                    color: $white;
+                }
+            }
+        }
+    }
+
+    &__text-wyswig {
+        @extend .fc-text__text-wyswig;
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin-top: 16px !important;
+        }
+
+        p {
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+    }
+}

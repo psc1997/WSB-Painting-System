@@ -1,0 +1,12 @@
+.e404-see-other {
+    padding-bottom: 110px;
+
+    &__title {
+        margin-bottom: 60px;
+        font-family: $first-font;
+        font-weight: 700;
+        text-align: center;
+
+        @include rfs(28px);
+    }
+}

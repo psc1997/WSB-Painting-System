@@ -1,0 +1,22 @@
+.page-default {
+    padding: 110px 0;
+
+    &__content-box {
+        padding: 60px 30px;
+        border-radius: 8px;
+        background-color: $second-color;
+    }
+
+    &__title {
+        margin-bottom: 32px;
+        font-family: $first-font;
+        font-variant: small-caps;
+        font-weight: 700;
+
+        @include rfs(44px);
+    }
+
+    &__text-wyswig {
+        // Type something...
+    }
+}

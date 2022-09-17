@@ -1,0 +1,21 @@
+# editor files
+.vscode
+
+# vendors and dependencies
+node_modules
+vendor
+
+# Build
+bundled/*
+
+# Wordpress
+site
+!/site
+/site/*
+!/site/wp-content
+/site/wp-content/*
+!/site/wp-content/themes
+/site/wp-content/themes/*
+!/site/wp-content/themes/main/
+!/site/wp-content/plugins
+/site/wp-content/plugins/*

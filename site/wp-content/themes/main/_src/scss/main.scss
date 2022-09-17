@@ -1,0 +1,27 @@
+// Imports from NPM
+@import
+    '../../../../../../node_modules/lightbox2/dist/css/lightbox.min.css',
+    '../../../../../../node_modules/sweetalert2/dist/sweetalert2.min.css';
+
+// Variables & Mixins
+@import
+    'setup/variables',
+    'setup/mixins';
+
+@import
+    'fonts/*';
+
+// Vendors
+@import
+    'vendors/bootstrap',
+    'vendors/rfs',
+    'vendors/lightbox2',
+    'vendors/swal2';
+
+// Setup
+@import
+    'setup/global';
+
+// Blocks
+@import
+    'blocks/**/*';

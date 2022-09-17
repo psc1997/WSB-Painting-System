@@ -1,0 +1,21 @@
+.fc-gallery-grid {
+    margin-bottom: 32px;
+
+    &__image-link {
+        display: block;
+        margin-bottom: 16px;
+        box-shadow: 0 0 16px -12px $first-color-lite;
+        border-radius: 4px;
+        overflow: hidden;
+
+        &:hover {
+            img {
+                transform: scale(1.05);
+            }
+        }
+    }
+
+    &__image {
+        transition: transform 0.25s;
+    }
+}

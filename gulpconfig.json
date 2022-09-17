@@ -1,0 +1,31 @@
+{
+    "paths": {
+        "root": "site/wp-content/themes/main",
+        "src": "site/wp-content/themes/main/_src",
+        "dest": "site/wp-content/themes/main/dist",
+        "styles": {
+            "src": "site/wp-content/themes/main/_src/scss",
+            "dest": "site/wp-content/themes/main/dist/css"
+        },
+        "scripts": {
+            "src": "site/wp-content/themes/main/_src/js",
+            "dest": "site/wp-content/themes/main/dist/js"
+        },
+        "fonts": {
+            "src": "site/wp-content/themes/main/_src/fonts",
+            "dest": "site/wp-content/themes/main/dist/fonts"
+        },
+        "iconfont": {
+            "src": "site/wp-content/themes/main/_src/iconfont",
+            "dest": "site/wp-content/themes/main/dist/iconfont"
+        },
+        "images": {
+            "src": "site/wp-content/themes/main/_src/img",
+            "dest": "site/wp-content/themes/main/dist/img"
+        },
+        "videos": {
+            "src": "site/wp-content/themes/main/_src/video",
+            "dest": "site/wp-content/themes/main/dist/video"
+        }
+    }
+}

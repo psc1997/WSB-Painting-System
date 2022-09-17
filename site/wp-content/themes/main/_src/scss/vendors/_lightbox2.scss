@@ -1,0 +1,28 @@
+.lb-outerContainer {
+    border-radius: 8px;
+    // background-color: #323130;
+    // background-color: transparent;
+}
+
+.lightbox .lb-image {
+    border: 0;
+    border-radius: 8px;
+}
+
+.lb-cancel {
+    height: 160px;
+    width: 160px;
+    background: url('../img/lightbox/loading.gif') no-repeat;
+}
+
+.lb-nav a.lb-prev {
+    background: url('../img/lightbox/prev.png') left 48% no-repeat;
+}
+
+.lb-nav a.lb-next {
+    background: url('../img/lightbox/next.png') right 48% no-repeat;
+}
+
+.lb-data .lb-close {
+    background: url('../img/lightbox/close.png') top right no-repeat;
+}

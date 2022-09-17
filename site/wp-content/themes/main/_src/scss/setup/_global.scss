@@ -1,0 +1,37 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    -webkit-overflow-scrolling: touch;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    background-color: $second-color;
+    overflow-x: hidden;
+}
+
+p {
+    font-family: $first-font;
+}
+
+.img {
+    height: auto;
+    max-width: 100%;
+}
+
+.icon {
+    vertical-align: middle;
+}
+
+.col-lg-five-elements {
+    @include media-breakpoint-up (xl) {
+        flex: 0 0 19.999%;
+        max-width: 19.999%;
+    }
+}

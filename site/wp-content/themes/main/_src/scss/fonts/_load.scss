@@ -1,0 +1,17 @@
+// @import 'iconfont';
+@import 'mixins';
+
+/**
+ * Czcionki
+ * @include font-face({font-name}, '../fonts/{font-folder}/{font-file-name}', {font-weight}, {font-style}, {font-type: woff ttf woff2});
+ */
+
+// Montserrat
+@include font-face('Montserrat', '../fonts/Montserrat/Montserrat-Regular', 400, normal, ttf);
+@include font-face('Montserrat', '../fonts/Montserrat/Montserrat-Bold', 700, normal, ttf);
+@include font-face('Montserrat', '../fonts/Montserrat/Montserrat-Black', 900, normal, ttf);
+
+// Ubuntu
+@include font-face('Ubuntu', '../fonts/Ubuntu/Ubuntu-Regular', 400, normal, ttf);
+@include font-face('Ubuntu', '../fonts/Ubuntu/Ubuntu-Medium', 500, normal, ttf);
+@include font-face('Ubuntu', '../fonts/Ubuntu/Ubuntu-Bold', 700, normal, ttf);

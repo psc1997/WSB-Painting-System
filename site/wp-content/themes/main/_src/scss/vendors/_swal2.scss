@@ -1,0 +1,8 @@
+.swal2-styled.swal2-confirm {
+    @extend .button;
+
+    &:active,
+    &:focus {
+        box-shadow: none;
+    }
+}

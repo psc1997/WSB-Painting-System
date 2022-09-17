@@ -1,0 +1,40 @@
+.cookie-info {
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+    height: auto;
+    width: 350px;
+    padding: 30px;
+    border: 2px solid $first-color;
+    border-radius: 3px;
+    background-color: $second-color;
+    opacity: 0;
+    z-index: 1000;
+    transition: opacity 0.25s;
+    pointer-events: none;
+
+    @include media-breakpoint-down (sm) {
+        left: 15px;
+        right: unset;
+        width: calc(100% - 30px);
+    }
+
+    &.is-visible {
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    &__icon-cookie {
+        &::before {
+            color: $first-color;
+
+            @include rfs(48px);
+        }
+    }
+
+    &__text {
+        color: $first-color;
+
+        @include rfs(16px);
+    }
+}

@@ -1,0 +1,41 @@
+.footer {
+    padding-bottom: 56px;
+
+    @include media-breakpoint-down (sm) {
+        padding-bottom: 96px;
+    }
+
+    &__line {
+        margin-top: 0;
+        border-top: 2px solid $first-color;
+        margin-bottom: 56px;
+    }
+
+    &__title {
+        margin-bottom: 8px;
+        color: $first-color;
+        font-family: $first-font;
+        font-weight: 700;
+
+        @include rfs(24px);
+    }
+
+    &__text {
+        color: $first-color;
+        font-family: $second-font;
+
+        @include rfs(16px);
+    }
+
+    &__link {
+        border-bottom: 1px solid transparent;
+        color: $first-color;
+        transition: border-color 0.25s;
+
+        &:hover {
+            color: $first-color;
+            border-color: $first-color;
+            text-decoration: none;
+        }
+    }
+}
