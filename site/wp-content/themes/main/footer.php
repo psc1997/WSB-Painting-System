@@ -30,12 +30,12 @@
     </div>
     <div class="row">
         <div class="col-24 col-sm-12 col-md-24">
-            <a href="#modalRODO" class="button button--full-width mb-3" data-toggle="modal">
+            <a href="#modalRODO" class="button button--full mb-3" data-toggle="modal">
                 Polityka prywatności
             </a>
         </div>
         <div class="col-24 col-sm-12 col-md-24">
-            <a href="#" class="button button--full-width js-accept-cookie">
+            <a href="#" class="button button--full js-accept-cookie">
                 OK
             </a>
         </div>

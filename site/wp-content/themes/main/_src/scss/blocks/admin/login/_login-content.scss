@@ -1,0 +1,60 @@
+.login-content {
+    height: 100%;
+    padding: 120px 0;
+    background-color: $dark;
+    justify-content: center;
+    align-items: center;
+
+    &__background-video-box {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: auto;
+        width: 100%;
+        transform: translate(-50%, -50%);
+    }
+
+    &__background-video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: auto;
+        width: 100%;
+        transform: translate(-50%, -50%);
+    }
+
+    &__card {
+        border: 0;
+        border-radius: 0;
+    }
+
+    &__card-body {
+        padding: 32px;
+    }
+
+    &__form {
+        label {
+            display: inline-block;
+            width: 100%;
+            color: $dark;
+            font-family: $second-font;
+            font-weight: 700;
+
+            @include rfs(14px);
+        }
+
+        #user_login,
+        #user_pass {
+            @extend .form-control;
+
+            border-radius: 0;
+            transition: border-color 0.25s;
+    
+            &:focus,
+            &:active {
+                border-color: $dark;
+                box-shadow: none;
+            }
+        }
+    }
+}

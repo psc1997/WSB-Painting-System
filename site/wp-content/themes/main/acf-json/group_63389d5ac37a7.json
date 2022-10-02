@@ -37,7 +37,7 @@
                     "key": "field_63389d84bd57e",
                     "label": "Login",
                     "name": "login",
-                    "type": "link",
+                    "type": "page_link",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -46,7 +46,34 @@
                         "class": "",
                         "id": ""
                     },
-                    "return_format": "array"
+                    "post_type": [
+                        "page"
+                    ],
+                    "taxonomy": "",
+                    "allow_null": 0,
+                    "allow_archives": 1,
+                    "multiple": 0
+                },
+                {
+                    "key": "field_63396c2909103",
+                    "label": "Dashboard",
+                    "name": "dashboard",
+                    "type": "page_link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "page"
+                    ],
+                    "taxonomy": "",
+                    "allow_null": 0,
+                    "allow_archives": 1,
+                    "multiple": 0
                 }
             ]
         }
@@ -68,5 +95,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1664655048
+    "modified": 1664707647
 }

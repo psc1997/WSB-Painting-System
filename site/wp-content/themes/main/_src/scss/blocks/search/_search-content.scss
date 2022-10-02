@@ -1,0 +1,15 @@
+.search-content {
+    padding-bottom: 120px;
+
+    &__alert {
+        display: inline-block;
+        padding: 36px 48px;
+        border: 2px solid rgba($white, 0.5);
+        border-radius: 0;
+        width: 100%;
+        color: $white;
+        text-align: center;
+
+        @include rfs(24px);
+    }
+}

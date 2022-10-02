@@ -5,11 +5,16 @@
     $authors = wp_get_post_terms($painting->ID, 'painting_author', ['number' => 1]);
     $types = wp_get_post_terms($painting->ID, 'painting_type', ['number' => 1]);
     $categories = wp_get_post_terms($painting->ID, 'painting_category', ['number' => 1]);
+
+    $open_new_tab = (!empty($args['new_tab'])) ? $args['new_tab'] : false;
 ?>
 
 <div class="item-painting">
-    <a href="<?= esc_url(get_permalink($painting->ID)); ?>" class="card item-painting__card">
-        <?= wp_get_attachment_image($image['ID'], 'thumbnail_painting', false, ['class' => 'img item-painting__card-image']); ?>
+    <a href="<?= esc_url(get_permalink($painting->ID)); ?>" <?= ($open_new_tab) ? 'target="_blank"' : ''; ?> class="card item-painting__card">
+        <?php if (!empty($image['ID'])) : ?>
+            <?= wp_get_attachment_image($image['ID'], 'thumbnail_painting', false, ['class' => 'img item-painting__card-image']); ?>
+        <?php endif; ?>
+
         <div class="card-body item-painting__card-body">
 
             <?php if (!empty($painting->post_title)) : ?>
@@ -30,7 +35,7 @@
                 endif;
             ?>
 
-            <?php if (!empty($size['height'] && !empty($size['width']))) : ?>
+            <?php if (isset($size) && !empty($size['height'] && !empty($size['width']))) : ?>
                 <p class="item-painting__card-specification">
                     <?= esc_html($size['height']); ?> x <?= esc_html($size['width']); ?> cm
                 </p>

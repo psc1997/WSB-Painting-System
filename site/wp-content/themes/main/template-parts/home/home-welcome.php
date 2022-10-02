@@ -21,17 +21,7 @@
             </div>
             <div class="row">
                 <div class="col-24 col-md-10 offset-0 offset-md-7">
-                    <form>
-                        <div class="input-group">
-                            <input type="text" class="form-control home-welcome__content-input" placeholder="Znajdź artystę lub styl...">
-                            <span class="icon icon-search home-welcome__content-input-icon"></span>
-                            <div class="input-group-append">
-                                <button class="button" type="button">
-                                    Szukaj
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+                    <?php get_search_form(); ?>
                 </div>
             </div>
         </div>

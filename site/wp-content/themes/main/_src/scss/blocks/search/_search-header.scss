@@ -1,0 +1,40 @@
+.search-header {
+    padding: 120px 0 60px 0;
+    background-color: $dark;
+    text-align: center;
+
+    &__box {
+        display: inline-block;
+        padding: 36px 48px;
+        border: 2px solid rgba($white, 0.5);
+        margin-bottom: 36px;
+        width: 100%;
+
+        &--bottom {
+            padding: 24px 36px;
+            border-color: rgba($white, 0.33);
+        }
+    }
+
+    &__title {
+        margin-bottom: 0;
+        color: $white;
+        font-family: $second-font;
+        font-weight: 500;
+
+        @include rfs(48px);
+
+        span {
+            color: $first-color-0;
+        }
+    }
+
+    &__text {
+        margin-bottom: 0;
+        color: $white;
+        font-family: $second-font;
+        font-weight: 500;
+
+        @include rfs(24px);
+    }
+}

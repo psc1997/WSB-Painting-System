@@ -32,25 +32,27 @@
 
                         <div class="collapse navbar-collapse" id="navbarHeader">
                             <ul class="navbar-nav ml-auto">
-                                <li class="nav-item header__nav-item">
-                                    <?php if (!is_user_logged_in() && !empty($login)) : ?>
+                                <?php if (!is_user_logged_in() && !empty($login)) : ?>
+                                    <li class="nav-item header__nav-item">
                                         <a href="<?= esc_url($login['url']); ?>" class="nav-link header__nav-link">
                                             <span class="icon icon-account"></span><br>
                                             Zaloguj się
                                         </a>
-                                    <?php else : ?>
-                                        <a href="<?= esc_url($login['url']); ?>?logout" class="nav-link header__nav-link">
+                                    </li>
+                                <?php else : ?>
+                                    <li class="nav-item header__nav-item">
+                                        <a href="<?= esc_url(get_author_posts_url(get_current_user_id())); ?>" class="nav-link header__nav-link">
                                             <span class="icon icon-account"></span><br>
+                                            Profil
+                                        </a>
+                                    </li>
+                                    <li class="nav-item header__nav-item">
+                                        <a href="<?= esc_url($login['url']); ?>?logout" class="nav-link header__nav-link">
+                                            <span class="icon icon-logout"></span><br>
                                             Wyloguj
                                         </a>
-                                    <?php endif; ?>
-                                </li>
-                                <!-- <li class="nav-item header__nav-item">
-                                    <a href="#" class="nav-link header__nav-link">
-                                        <span class="icon icon-account"></span><br>
-                                        Profil
-                                    </a>
-                                </li> -->
+                                    </li>
+                                <?php endif; ?>
                             </ul>
                         </div>
                     </nav>

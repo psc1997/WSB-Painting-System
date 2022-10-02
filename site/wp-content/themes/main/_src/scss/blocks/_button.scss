@@ -34,6 +34,7 @@
     &--full {
         display: inline-block;
         width: 100%;
+        text-align: center;
     }
 
     &--big {
@@ -42,5 +43,71 @@
 
     &--small {
         padding: 4px 8px;
+    }
+
+    &--facebook {
+        background-color: transparent;
+        border-color: rgba(#4267b2, 0.5);
+        color: rgba(#4267b2, 0.75);
+
+        &:hover {
+            background-color: #4267b2;
+            color: $white;
+        }
+    }
+
+    &--instagram {
+        background-color: transparent;
+        border-color: rgba(#833ab4, 0.5);
+        color: rgba(#833ab4, 0.75);
+
+        &:hover {
+            background-color: #833ab4;
+            color: $white;
+        }
+    }
+
+    &--pinterest {
+        background-color: transparent;
+        border-color: rgba(#e60023, 0.5);
+        color: rgba(#e60023, 0.75);
+
+        &:hover {
+            background-color: #e60023;
+            color: $white;
+        }
+    }
+
+    &--tumblr {
+        background-color: transparent;
+        border-color: rgba(#35465c, 0.5);
+        color: rgba(#35465c, 0.75);
+
+        &:hover {
+            background-color: #35465c;
+            color: $white;
+        }
+    }
+
+    &--youtube {
+        background-color: transparent;
+        border-color: rgba(#ff0000, 0.5);
+        color: rgba(#ff0000, 0.75);
+
+        &:hover {
+            background-color: #ff0000;
+            color: $white;
+        }
+    }
+
+    &--wikipedia {
+        background-color: transparent;
+        border-color: rgba(#c7c8ca, 0.5);
+        color: rgba(#c7c8ca, 0.75);
+
+        &:hover {
+            background-color: #c7c8ca;
+            color: $white;
+        }
     }
 }

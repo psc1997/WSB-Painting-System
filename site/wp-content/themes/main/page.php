@@ -17,7 +17,7 @@
                     <div class="row">
                         <div class="col-24">
                             <div class="page-default__text-wyswig">
-                                <?= wp_kses_post(get_the_content()); ?>
+                                <?= wp_kses_post(wpautop(get_the_content())); ?>
                             </div>
                         </div>
                     </div>

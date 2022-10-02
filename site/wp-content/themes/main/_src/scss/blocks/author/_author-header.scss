@@ -1,4 +1,4 @@
-.painting-content {
+.author-header {
     padding: 120px 0;
 
     &__image-box {
@@ -20,19 +20,6 @@
         font-family: $first-font;
 
         @include rfs(48px);
-    }
-
-    &__specification {
-        margin-bottom: 16px;
-        color: $white;
-        font-family: $second-font;
-
-        @include rfs(16px);
-
-        a,
-        span {
-            color: rgba($white, 0.75);
-        }
     }
 
     &__breaker {

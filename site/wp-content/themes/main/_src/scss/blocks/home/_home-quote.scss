@@ -1,0 +1,24 @@
+.home-quote {
+    padding: 120px 0;
+    background-color: $dark;
+
+    &__box {
+        border: 2px solid $dark-1;
+        background-color: rgba($dark-1, 0.75);
+        padding: 48px;
+    }
+
+    &__text {
+        color: $white;
+        font-style: italic;
+        line-height: 1;
+
+        @include rfs(24px);
+    }
+
+    &__text-small {
+        margin-bottom: 0;
+        color: $white;
+        text-align: right;
+    }
+}
