@@ -1,0 +1,47 @@
+.admin-account-content {
+    &__title {
+        margin-bottom: 16px;
+        color: $white;
+
+        @include rfs(24px);
+    }
+
+    &__breaker {
+        display: inline-block;
+        margin: 16px 0;
+        height: 1px;
+        width: 100%;
+        border: 0;
+        background-color: rgba($white, 0.5);
+    }
+
+    &__label {
+        color: $white;
+        font-weight: 700;
+    }
+
+    &__input {
+        border-radius: 0;
+        background-color: transparent;
+        color: $white !important;
+        transition:
+            padding-left 0.25s,
+            border-color 0.25s;
+
+        &::placeholder {
+            color: $second-color-0;
+        }
+
+        &.is-not-empty,
+        &:focus,
+        &:active {
+            box-shadow: unset;
+            background-color: transparent;
+            border-color: $first-color-0;
+        }
+
+        &--textarea {
+            resize: none;
+        }
+    }
+}

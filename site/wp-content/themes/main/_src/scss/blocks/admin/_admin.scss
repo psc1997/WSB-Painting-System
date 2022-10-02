@@ -1,0 +1,9 @@
+.admin {
+    padding: 120px 0;
+
+    &__box {
+        border: 2px solid $dark-1;
+        background-color: rgba($dark-1, 0.75);
+        padding: 48px;
+    }
+}

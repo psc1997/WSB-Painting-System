@@ -1,0 +1,16 @@
+.admin-paintings-content {
+    &__item {
+        padding: 16px 0;
+
+        &:not(:last-of-type) {
+            border-bottom: 1px solid $white;
+        }
+    }
+
+    &__item-title {
+        margin-bottom: 0;
+        color: $white;
+
+        @include rfs(18px);
+    }
+}

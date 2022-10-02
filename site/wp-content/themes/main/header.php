@@ -14,7 +14,8 @@
 <body <?php body_class() ?>>
 
     <?php
-        $login = get_field('pages_assignment_login', 'option');
+        $login_url = get_field('pages_assignment_login', 'option');
+        $dashboard = get_field('pages_assignment_dashboard', 'option');
     ?>
 
     <header class="header">
@@ -32,14 +33,20 @@
 
                         <div class="collapse navbar-collapse" id="navbarHeader">
                             <ul class="navbar-nav ml-auto">
-                                <?php if (!is_user_logged_in() && !empty($login)) : ?>
+                                <?php if (!is_user_logged_in() && !empty($login_url)) : ?>
                                     <li class="nav-item header__nav-item">
-                                        <a href="<?= esc_url($login['url']); ?>" class="nav-link header__nav-link">
+                                        <a href="<?= esc_url($login_url); ?>" class="nav-link header__nav-link">
                                             <span class="icon icon-account"></span><br>
                                             Zaloguj się
                                         </a>
                                     </li>
                                 <?php else : ?>
+                                    <li class="nav-item header__nav-item">
+                                        <a href="<?= esc_url($dashboard); ?>" class="nav-link header__nav-link">
+                                            <span class="icon icon-settings"></span><br>
+                                            Ustawienia
+                                        </a>
+                                    </li>
                                     <li class="nav-item header__nav-item">
                                         <a href="<?= esc_url(get_author_posts_url(get_current_user_id())); ?>" class="nav-link header__nav-link">
                                             <span class="icon icon-account"></span><br>
@@ -47,7 +54,7 @@
                                         </a>
                                     </li>
                                     <li class="nav-item header__nav-item">
-                                        <a href="<?= esc_url($login['url']); ?>?logout" class="nav-link header__nav-link">
+                                        <a href="<?= esc_url($login_url); ?>?logout" class="nav-link header__nav-link">
                                             <span class="icon icon-logout"></span><br>
                                             Wyloguj
                                         </a>

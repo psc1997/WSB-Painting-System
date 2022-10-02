@@ -74,6 +74,48 @@
                     "allow_null": 0,
                     "allow_archives": 1,
                     "multiple": 0
+                },
+                {
+                    "key": "field_633990083fa9a",
+                    "label": "Ustawienia konta",
+                    "name": "account_settings",
+                    "type": "post_object",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "page"
+                    ],
+                    "taxonomy": "",
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "return_format": "object",
+                    "ui": 1
+                },
+                {
+                    "key": "field_633990133fa9b",
+                    "label": "Zarządzanie obrazami",
+                    "name": "paintings_management",
+                    "type": "post_object",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": "",
+                    "taxonomy": "",
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "return_format": "object",
+                    "ui": 1
                 }
             ]
         }
@@ -95,5 +137,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1664707647
+    "modified": 1664717169
 }
