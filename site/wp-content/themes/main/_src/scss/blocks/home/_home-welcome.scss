@@ -65,7 +65,13 @@
     &__content-input {
         height: 52px;
         padding-left: 48px;
-        transition: padding-left 0.25s;
+        border-right: 0;
+        border-radius: 0;
+        background-color: transparent;
+        color: $white !important;
+        transition:
+            padding-left 0.25s,
+            border-color 0.25s;
 
         @include rfs(22px);
 
@@ -78,6 +84,8 @@
         &:active {
             padding-left: 16px;
             box-shadow: unset;
+            background-color: transparent;
+            border-color: $first-color-0;
 
             + #{$root}__content-input-icon {
                 opacity: 0;

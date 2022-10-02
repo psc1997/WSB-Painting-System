@@ -26,7 +26,7 @@ $container-max-widths: (
     sm: 720px,
     md: 960px,
     lg: 1210px,
-    xl: 1410px
+    xl: 1510px
 );
 
 // @import '../../../../../../node_modules/bootstrap/scss/bootstrap'; 1 391 Kb
@@ -53,7 +53,7 @@ $container-max-widths: (
 @import '../../../../../../node_modules/bootstrap/scss/buttons';
 // @import '../../../../../../node_modules/bootstrap/scss/dropdown';
 // @import '../../../../../../node_modules/bootstrap/scss/button-group';
-// @import '../../../../../../node_modules/bootstrap/scss/input-group';
+@import '../../../../../../node_modules/bootstrap/scss/input-group';
 // @import '../../../../../../node_modules/bootstrap/scss/custom-forms';
 @import '../../../../../../node_modules/bootstrap/scss/nav';
 @import '../../../../../../node_modules/bootstrap/scss/navbar';

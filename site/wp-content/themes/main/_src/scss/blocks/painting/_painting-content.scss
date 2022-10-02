@@ -1,0 +1,64 @@
+.painting-content {
+    padding: 120px 0;
+    background-color: $dark;
+
+    &__image-box {
+        padding: 32px;
+        border: 1px solid rgba($white, 0.75);
+    }
+
+    &__author {
+        margin-bottom: 16px;
+        color: rgba($white, 0.75);
+        font-family: $second-font;
+
+        @include rfs(24px);
+    }
+
+    &__title {
+        margin-bottom: 32px;
+        color: $white;
+        font-family: $first-font;
+
+        @include rfs(48px);
+    }
+
+    &__specification {
+        margin-bottom: 16px;
+        color: $white;
+        font-family: $second-font;
+
+        @include rfs(16px);
+
+        a,
+        span {
+            color: rgba($white, 0.75);
+        }
+    }
+
+    &__breaker {
+        display: inline-block;
+        margin: 16px 0;
+        height: 1px;
+        width: 100%;
+        border: 0;
+        background-color: rgba($white, 0.5);
+    }
+
+    &__title-text {
+        margin-bottom: 16px;
+        color: $white;
+        font-family: $second-font;
+        font-weight: 700;
+
+        @include rfs(18px);
+    }
+
+    &__text {
+        margin-bottom: 16px;
+        color: rgba($white, 0.75);
+        font-family: $second-font;
+
+        @include rfs(16px);
+    }
+}

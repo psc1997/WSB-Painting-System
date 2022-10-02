@@ -2,9 +2,9 @@
     $painting = $args['painting'];
     $image = get_field('painting_image', $painting->ID);
     $size = get_field('painting_size', $painting->ID);
-    $authors = wp_get_post_terms($painting->ID, 'painting_author');
-    $types = wp_get_post_terms($painting->ID, 'painting_type');
-    $categories = wp_get_post_terms($painting->ID, 'painting_category', ['number' => 4]);
+    $authors = wp_get_post_terms($painting->ID, 'painting_author', ['number' => 1]);
+    $types = wp_get_post_terms($painting->ID, 'painting_type', ['number' => 1]);
+    $categories = wp_get_post_terms($painting->ID, 'painting_category', ['number' => 1]);
 ?>
 
 <div class="item-painting">

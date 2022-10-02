@@ -1,4 +1,4 @@
-import Swiper, { Navigation } from 'swiper';
+import Swiper, {Navigation} from 'swiper';
 
 /**
  * Funkcja odpowiada za wyświetlenie komunikatu o ciasteczkach.
@@ -18,14 +18,37 @@ export default function makeSliders () {
 function makeHomelider () {
     Swiper.use([Navigation]);
 
-    const swiper = new Swiper('.js-home-slider', {
+    /* eslint-disable no-new */
+    new Swiper('.js-home-last-slider', {
         direction: 'horizontal',
         slidesPerView: 4,
         spaceBetween: 10,
         loop: false,
         navigation: {
-            nextEl: '.js-home-slider-button-next',
-            prevEl: '.js-home-slider-button-prev'
+            nextEl: '.js-home-last-slider-button-next',
+            prevEl: '.js-home-last-slider-button-prev'
+        }
+    });
+
+    new Swiper('.js-home-artist-slider', {
+        direction: 'horizontal',
+        slidesPerView: 4,
+        spaceBetween: 10,
+        loop: false,
+        navigation: {
+            nextEl: '.js-home-artist-slider-button-next',
+            prevEl: '.js-home-artist-slider-button-prev'
+        }
+    });
+
+    new Swiper('.js-painting-more-slider', {
+        direction: 'horizontal',
+        slidesPerView: 4,
+        spaceBetween: 10,
+        loop: false,
+        navigation: {
+            nextEl: '.js-painting-more-slider-button-next',
+            prevEl: '.js-painting-more-slider-button-prev'
         }
     });
 }

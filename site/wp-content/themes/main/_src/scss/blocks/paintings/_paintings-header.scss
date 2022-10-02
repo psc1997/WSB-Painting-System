@@ -1,0 +1,21 @@
+.paintings-header {
+    padding: 120px 0;
+    background-color: $dark;
+    text-align: center;
+
+    &__box {
+        display: inline-block;
+        padding: 36px 48px;
+        border: 2px solid rgba($white, 0.5);
+        margin-bottom: 36px;
+    }
+
+    &__title {
+        margin-bottom: 0;
+        color: $white;
+        font-family: $second-font;
+        font-weight: 500;
+
+        @include rfs(60px);
+    }
+}

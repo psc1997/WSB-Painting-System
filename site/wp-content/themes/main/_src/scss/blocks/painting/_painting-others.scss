@@ -1,17 +1,16 @@
-.home-paintings {
+.painting-others {
+    padding-bottom: 120px;
     background-color: $dark;
-    padding: 60px 0;
 
     &__title {
         display: inline-block;
         width: 100%;
         margin-bottom: 36px;
         padding: 24px 36px;
-        border: 2px solid $dark-1;
-        background-color: rgba($dark-1, 0.9);
+        border: 1px solid rgba($white, 0.75);
+        background-color: rgba($white, 0.05);
         color: $white;
         font-family: $second-font;
-        font-weight: 700;
         
         @include rfs(36px);
     }

@@ -12,6 +12,11 @@
 </head>
 
 <body <?php body_class() ?>>
+
+    <?php
+        $login = get_field('pages_assignment_login', 'option');
+    ?>
+
     <header class="header">
         <div class="container">
             <div class="row">
@@ -28,10 +33,17 @@
                         <div class="collapse navbar-collapse" id="navbarHeader">
                             <ul class="navbar-nav ml-auto">
                                 <li class="nav-item header__nav-item">
-                                    <a href="#" class="nav-link header__nav-link">
-                                        <span class="icon icon-account"></span><br>
-                                        Zaloguj się
-                                    </a>
+                                    <?php if (!is_user_logged_in() && !empty($login)) : ?>
+                                        <a href="<?= esc_url($login['url']); ?>" class="nav-link header__nav-link">
+                                            <span class="icon icon-account"></span><br>
+                                            Zaloguj się
+                                        </a>
+                                    <?php else : ?>
+                                        <a href="<?= esc_url($login['url']); ?>?logout" class="nav-link header__nav-link">
+                                            <span class="icon icon-account"></span><br>
+                                            Wyloguj
+                                        </a>
+                                    <?php endif; ?>
                                 </li>
                                 <!-- <li class="nav-item header__nav-item">
                                     <a href="#" class="nav-link header__nav-link">
