@@ -3,6 +3,7 @@ import 'bootstrap';
 import 'lightbox2';
 import Swal from 'sweetalert2';
 
+import ajaxChangeFavourites from './modules/ajax/ajax-change-favourites';
 import ajaxSaveAccount from './modules/ajax/admin-save-account';
 
 import makeCookies from './modules/cookie-info';
@@ -21,6 +22,7 @@ const documentReady = () => {
     makeSmoothScrollLogic();
 
     // AJAX
+    ajaxChangeFavourites();
     ajaxSaveAccount();
 
     $('[data-toggle="tooltip"]').tooltip();

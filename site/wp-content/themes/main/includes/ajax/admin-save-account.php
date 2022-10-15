@@ -8,10 +8,10 @@ if (!defined('ABSPATH')) {
 add_action('wp_ajax_admin_save_account', 'admin_save_account');
 
 /**
- * Funkcja wysyłająca mail'a z formularza kontaktowego.
+ * Funkcja zapisująca dane w panelu użytkownika.
  *
  * @return void
- * @version 0.1.0
+ * @version 1.0.0
  */
 function admin_save_account()
 {

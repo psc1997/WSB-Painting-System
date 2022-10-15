@@ -12,7 +12,6 @@
 ?>
 
 <section class="admin-paintings-content">
-    
     <h5 class="admin-paintings-content__title">
         Ulubione obrazy
     </h5>
@@ -34,7 +33,10 @@
                     </p>
                 </div>
                 <div class="col-24 col-md-12 d-flex align-items-center justify-content-end">
-                    <button class="button button">
+                    <a href="<?= esc_url(get_permalink($painting->ID)); ?>" class="button mr-2" target="_blank">
+                        Zobacz
+                    </a>
+                    <button class="button js-change-favourites" data-id="<?= esc_attr($painting->ID); ?>">
                         <span class="icon icon-trash"></span>
                     </button>
                 </div>

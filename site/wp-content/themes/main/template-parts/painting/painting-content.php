@@ -39,11 +39,11 @@
                     <div class="col-12 text-right">
                         <?php if (!empty($current_user_id)) : ?>
                             <?php if (in_array($post->ID, $favourites, true)) : ?>
-                                <button class="button">
+                                <button class="button js-change-favourites" data-id="<?= esc_attr($post->ID); ?>">
                                     <span class="icon icon-heart-full"></span>
                                 </button>
                             <?php else : ?>
-                                <button class="button button--ghost">
+                                <button class="button button--ghost js-change-favourites" data-id="<?= esc_attr($post->ID); ?>">
                                     <span class="icon icon-heart-empty"></span>
                                 </button>
                             <?php endif; ?>

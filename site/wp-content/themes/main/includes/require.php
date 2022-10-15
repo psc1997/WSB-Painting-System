@@ -21,3 +21,4 @@ require_once 'custom-post-type/painting.php';
 
 // AJAX
 require_once 'ajax/admin-save-account.php';
+require_once 'ajax/ajax-change-favourites.php';
