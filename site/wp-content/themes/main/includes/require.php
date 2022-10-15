@@ -18,3 +18,6 @@ require_once 'hello-dolly/hello-dolly.php';
 
 // Custom Post Types
 require_once 'custom-post-type/painting.php';
+
+// AJAX
+require_once 'ajax/admin-save-account.php';

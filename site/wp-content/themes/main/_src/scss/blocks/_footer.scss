@@ -1,6 +1,7 @@
 .footer {
-    padding: 60px 0;
-    background-color: $dark-1;
+    padding: 80px 0;
+    background-color: lighten($dark, 3);
+    border-top: 1px solid $dark-1;
 
     // Wymagane na potrzeby stron na height 100vh
     margin-top: auto;
@@ -13,11 +14,40 @@
 
     &__text {
         color: $white;
+        font-family: $second-font;
+
+        @include rfs(14px);
     }
 
     &__copyrights {
+        margin-bottom: 0;
         color: $white;
 
         @include rfs(12px);
+    }
+
+    &__nav-title {
+        color: $white;
+
+        @include rfs(24px);
+    }
+
+    &__nav {
+        // Type something...
+    }
+
+    &__nav-link {
+        border-left: 0;
+        color: $first-color-0;
+        border-bottom: 1px solid transparent;
+        transition: border-color 0.25s;
+
+        @include rfs(16px);
+
+        &:hover {
+            color: $first-color-0;
+            border-color: $first-color-0;
+            text-decoration: none;
+        }
     }
 }

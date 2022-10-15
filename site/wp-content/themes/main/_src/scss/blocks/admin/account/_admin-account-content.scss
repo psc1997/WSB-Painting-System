@@ -6,6 +6,12 @@
         @include rfs(24px);
     }
 
+    &__avatar-box {
+        padding: 16px;
+        background-color: $dark-1;
+        text-align: center;
+    }
+
     &__breaker {
         display: inline-block;
         margin: 16px 0;
@@ -43,5 +49,13 @@
         &--textarea {
             resize: none;
         }
+    }
+
+    &__input-group-text {
+        display: flex;
+        width: 40px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 0;
     }
 }

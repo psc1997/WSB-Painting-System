@@ -116,39 +116,6 @@ add_action('init', static function () {
 });
 
 /**
- * Funkcja definiująca autorów dla 'Obraz'.
- *
- * @version 1.0.0
- */
-add_action('init', static function () {
-    $labels = [
-        'name'                  => 'Autor',
-        'singular_name'         => 'Autor',
-        'search_items'          => 'Szukaj autora',
-        'all_items'             => 'Wszyscy autorzy',
-        'edit_item'             => 'Edytuj autora',
-        'update_item'           => 'Aktualizuj autora',
-        'add_new_item'          => 'Dodaj nowego autora',
-    ];
-
-    $rewrite = [
-        'slug'                  => 'autor',
-        'with_front'            => true,
-    ];
-
-    $args = [
-        'hierarchical' => true,
-        'labels' => $labels,
-        'show_ui' => true,
-        'show_admin_column' => true,
-        'query_var' => true,
-        'rewrite' => $rewrite,
-    ];
-
-    register_taxonomy('painting_author', 'painting', $args);
-});
-
-/**
  * Dodanie dodatkowej kolumny do listowania w panelu administratora.
  *
  * @version 1.0.0

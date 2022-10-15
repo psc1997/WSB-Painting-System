@@ -10,6 +10,6 @@ return [
         'thumbnail_painting'    => [450, 450, true],
     ],
     'menus' => [
-        'header_menu' => 'Menu - Header',
+        'footer_menu' => 'Menu - Footer',
     ],
 ];

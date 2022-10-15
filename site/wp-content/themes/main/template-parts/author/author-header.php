@@ -19,7 +19,11 @@
         <div class="row">
             <div class="col-24 col-md-8">
                 <div class="author-header__image-box">
-                    <?= wp_get_attachment_image($acf_data['user_avatar']['ID'], 'thumbnail_painting', false, ['class' => 'img']); ?>
+                    <?php if (!empty($acf_data['user_avatar'])) : ?>
+                        <?= wp_get_attachment_image($acf_data['user_avatar']['ID'], 'thumbnail_painting', false, ['class' => 'img']); ?>
+                    <?php else : ?>
+                        <img src="<?= esc_url(get_template_directory_uri()); ?>/dist/img/thumbnail-avatar.png" alt="Brak avatara użytkownika" class="img">
+                    <?php endif; ?>
                 </div>
             </div>
             <div class="col-24 col-md-14 offset-0 offset-md-2">

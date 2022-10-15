@@ -57,4 +57,20 @@
             }
         }
     }
+
+    &__text {
+        // Type something...
+    }
+
+    &__link {
+        color: $first-color-0;
+        border-bottom: 1px solid transparent;
+        transition: border-color 0.25s;
+
+        &:hover {
+            color: $first-color-0;
+            border-color: $first-color-0;
+            text-decoration: none;
+        }
+    }
 }

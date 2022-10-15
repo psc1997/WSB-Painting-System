@@ -1,24 +1,11 @@
 <?php
     $post = get_post();
 
-    $authors = wp_get_post_terms($post->ID, 'painting_author');
-    $authors_ids = [];
-
-    foreach ($authors as $key => $author) {
-        $authors_ids[] = $author->term_id;
-    }
-
     $paintings = get_posts([
         'post_type' => 'painting',
         'posts_per_page' => 10,
         'exclude' => $post->ID,
-        'tax_query' => [
-            [
-                'taxonomy' => 'painting_author',
-                'field' => 'term_id',
-                'terms' => $authors_ids,
-            ],
-        ],
+        'author' => $post->post_author,
     ]);
 ?>
 

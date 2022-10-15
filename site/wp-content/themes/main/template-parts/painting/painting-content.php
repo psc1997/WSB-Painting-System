@@ -2,9 +2,19 @@
     $post = get_post();
     $acf_data = $args['acf_data'];
 
-    $authors = wp_get_post_terms($post->ID, 'painting_author');
     $types = wp_get_post_terms($post->ID, 'painting_type');
     $categories = wp_get_post_terms($post->ID, 'painting_category', ['number' => 4]);
+    $author_id = $post->post_author;
+    $author_name = get_user_meta($author_id, 'nickname', true);
+    $author_description = get_user_meta($author_id, 'description', true);
+    $author_link = get_author_posts_url($author_id);
+
+    // Sprawdzamy stan ulubionych
+    $current_user_id = get_current_user_id();
+
+    if (!empty($current_user_id)) {
+        $favourites = get_field('user_favourites', 'user_' . $current_user_id);
+    }
 ?>
 
 <section class="painting-content">
@@ -18,17 +28,32 @@
                 </div>
             </div>
             <div class="col-24 col-md-11 offset-0 offset-md-2">
-                <?php
-                    if (!empty($authors)) :
-                    foreach ($authors as $key => $author) :
-                ?>
-                    <h5 class="painting-content__author">
-                        <?= esc_html($author->name); ?>
-                    </h5>
-                <?php
-                    endforeach;
-                    endif;
-                ?>
+                <div class="row">
+                    <div class="col-12">
+                        <?php if (!empty($author_name)) : ?>
+                            <h5 class="painting-content__author">
+                                <?= esc_html($author_name); ?>
+                            </h5>
+                        <?php endif; ?>
+                    </div>
+                    <div class="col-12 text-right">
+                        <?php if (!empty($current_user_id)) : ?>
+                            <?php if (in_array($post->ID, $favourites, true)) : ?>
+                                <button class="button">
+                                    <span class="icon icon-heart-full"></span>
+                                </button>
+                            <?php else : ?>
+                                <button class="button button--ghost">
+                                    <span class="icon icon-heart-empty"></span>
+                                </button>
+                            <?php endif; ?>
+                        <?php else : ?>
+                            <button type="button" class="button button--ghost" data-toggle="tooltip" data-placement="left" title="Zaloguj się, aby dodać obraz do ulubionych!">
+                                <span class="icon icon-heart-empty"></span>
+                            </button>
+                        <?php endif; ?>
+                    </div>
+                </div>
 
                 <h1 class="painting-content__title">
                     <?= esc_html($post->post_title); ?>
@@ -60,11 +85,13 @@
                     </p>
                 <?php endif; ?>
 
-                <div class="text-right">
-                    <a href="#" class="button">
-                        Skontaktuj się z artystą
-                    </a>
-                </div>
+                <?php if (!empty($author_link)) : ?>
+                    <div class="text-right">
+                        <a href="<?= esc_url($author_link); ?>" class="button">
+                            Skontaktuj się z artystą
+                        </a>
+                    </div>
+                <?php endif; ?>
 
                 <?php if (!empty($acf_data['painting_description'])) : ?>
                     <hr class="painting-content__breaker">
@@ -77,19 +104,24 @@
                     </p>
                 <?php endif; ?>
 
-                <hr class="painting-content__breaker">
+                <?php if (!empty($author_description)) : ?>
+                    <hr class="painting-content__breaker">
 
-                <h6 class="painting-content__title-text">
-                    O artyście:
-                </h6>
-                <p class="painting-content__text">
-                    Curabitur ullamcorper magna non posuere consectetur. Suspendisse sit amet maximus ante. Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer eu orci turpis. Vivamus non tristique libero, at sodales justo. Maecenas nec risus at orci vehicula convallis. Phasellus semper, nunc a posuere efficitur, enim augue interdum erat, at suscipit ex nisi at dui.
-                </p>
-                <div class="text-right">
-                    <a href="#" class="button button--ghost">
-                        Dowiedz się więcej
-                    </a>
-                </div>
+                    <h6 class="painting-content__title-text">
+                        O artyście:
+                    </h6>
+                    <p class="painting-content__text">
+                        <?= esc_html($author_description); ?>
+                    </p>
+
+                    <?php if (!empty($author_link)) : ?>
+                        <div class="text-right">
+                            <a href="<?= esc_url($author_link); ?>" class="button button--ghost">
+                                Dowiedz się więcej
+                            </a>
+                        </div>
+                    <?php endif; ?>
+                <?php endif; ?>
             </div>
         </div>
     </div>

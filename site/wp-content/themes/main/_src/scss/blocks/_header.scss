@@ -4,8 +4,8 @@
     left: 0;
     height: auto;
     width: 100%;
-    background-color: rgba($dark, 0.5);
-    border-bottom: 1px solid $dark;
+    background-color: rgba($dark-1, 0.25);
+    border-bottom: 1px solid $dark-1;
     z-index: 999;
 
     &__navbar {

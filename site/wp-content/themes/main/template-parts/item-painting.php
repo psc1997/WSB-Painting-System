@@ -2,9 +2,10 @@
     $painting = $args['painting'];
     $image = get_field('painting_image', $painting->ID);
     $size = get_field('painting_size', $painting->ID);
-    $authors = wp_get_post_terms($painting->ID, 'painting_author', ['number' => 1]);
     $types = wp_get_post_terms($painting->ID, 'painting_type', ['number' => 1]);
     $categories = wp_get_post_terms($painting->ID, 'painting_category', ['number' => 1]);
+    $author_id = $painting->post_author;
+    $author_name = get_user_meta($author_id, 'nickname', true);
 
     $open_new_tab = (!empty($args['new_tab'])) ? $args['new_tab'] : false;
 ?>
@@ -23,17 +24,11 @@
                 </h5>
             <?php endif; ?>
 
-            <?php
-                if (!empty($authors)) :
-                foreach ($authors as $key => $author) :
-            ?>
+            <?php if (!empty($author_name)) : ?>
                 <h6 class="card-title item-painting__card-author">
-                    <?= esc_html($author->name); ?>
+                    <?= esc_html($author_name); ?>
                 </h6>
-            <?php
-                endforeach;
-                endif;
-            ?>
+            <?php endif; ?>
 
             <?php if (isset($size) && !empty($size['height'] && !empty($size['width']))) : ?>
                 <p class="item-painting__card-specification">

@@ -10,8 +10,12 @@
             <div class="col-24 col-lg-8 offset-0 offset-lg-8">
                 <div class="card admin-login-content__card">
                     <div class="card-body admin-login-content__card-body">
-                        <div class="admin-login-content__form">
+                        <div class="admin-login-content__form text-center">
                             <?php wp_login_form(); ?>
+                            <hr>
+                            <p>
+                                Nie masz jeszcze konta? <a href="#" class="admin-login-content__link">Zarejestruj się!</a>
+                            </p>
                         </div>
                     </div>
                 </div>

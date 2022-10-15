@@ -1,4 +1,11 @@
 .admin-paintings-content {
+    &__title {
+        margin-bottom: 16px;
+        color: $white;
+
+        @include rfs(24px);
+    }
+
     &__item {
         padding: 16px 0;
 

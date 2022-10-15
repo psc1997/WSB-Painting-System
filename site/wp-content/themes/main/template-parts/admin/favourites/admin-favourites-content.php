@@ -1,16 +1,20 @@
 <?php
+    $current_user_id = get_current_user_id();
+
+    $favourites = get_field('user_favourites', 'user_' . $current_user_id);
+
     $paintings = get_posts([
         'post_type' => 'painting',
         'posts_per_page' => -1,
-        'author' => get_current_user_id(),
         'post_status' => 'any',
+        'include' => $favourites,
     ]);
 ?>
 
 <section class="admin-paintings-content">
     
     <h5 class="admin-paintings-content__title">
-        Twoje obrazy
+        Ulubione obrazy
     </h5>
     <?php
         if (!empty($paintings)) :
@@ -30,21 +34,6 @@
                     </p>
                 </div>
                 <div class="col-24 col-md-12 d-flex align-items-center justify-content-end">
-
-                    <?php if ($painting->post_status === 'publish') : ?>
-                        <button class="button button--ghost mr-1">
-                            Ukryj
-                        </button>
-                    <?php else : ?>
-                        <button class="button button--ghost mr-1">
-                            Opublikuj
-                        </button>
-                    <?php endif; ?>
-
-                    <button class="button button--ghost mr-1">
-                        Edytuj
-                    </button>
-
                     <button class="button button">
                         <span class="icon icon-trash"></span>
                     </button>

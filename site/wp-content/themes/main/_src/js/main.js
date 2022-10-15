@@ -3,6 +3,8 @@ import 'bootstrap';
 import 'lightbox2';
 import Swal from 'sweetalert2';
 
+import ajaxSaveAccount from './modules/ajax/admin-save-account';
+
 import makeCookies from './modules/cookie-info';
 import makeHomeWelcome from './modules/home-welcome';
 import makeHotspotsLogic from './modules/hotspots';
@@ -17,6 +19,11 @@ const documentReady = () => {
     makeHotspotsLogic();
     makeSliders();
     makeSmoothScrollLogic();
+
+    // AJAX
+    ajaxSaveAccount();
+
+    $('[data-toggle="tooltip"]').tooltip();
 };
 
 if (
