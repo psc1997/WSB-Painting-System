@@ -3,7 +3,6 @@ import Cookies from 'js-cookie';
 /**
  * Funkcja odpowiada za wyświetlenie komunikatu o ciasteczkach.
  *
- * @module CookieInfo
  * @version 1.0.0
  */
 export default function makeCookies () {

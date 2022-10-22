@@ -23,11 +23,23 @@
     
     &--ghost {
         color: $first-color-0;
+        border-color: $first-color-0;
         background-color: transparent;
 
         &:hover {
             color: $white;
             background-color: $first-color-0;
+        }
+    }
+
+    &--ghost-green {
+        color: $green;
+        border-color: $green;
+        background-color: transparent;
+
+        &:hover {
+            color: $white;
+            background-color: $green;
         }
     }
 

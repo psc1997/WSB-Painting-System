@@ -1,6 +1,16 @@
 <?php
     $current_user_id = get_current_user_id();
 
+    // Jeżeli znaleziono AVATAR FILE to trigger'ujemy wysyłanie avatara.
+    if (!empty($_FILES['avatar_file'])) {
+        add_user_avatar($_FILES['avatar_file']);
+    }
+
+    // Trigger usunięcia avatar'u
+    if (!empty($_POST['remove_avatar'])) {
+        remove_avatar_file($current_user_id);
+    }
+
     $description = get_user_meta($current_user_id, 'description', true);
     $social_media = [
         'facebook'  => get_user_meta($current_user_id, 'facebook', true),
@@ -15,29 +25,40 @@
 ?>
 
 <section class="admin-account-content">
-    <form id="js-admin-save-account">
-        <h5 class="admin-account-content__title">
-            Podstawowe dane konta
-        </h5>
-        <div class="row">
-            <div class="col-24 col-md-8">
-                <div class="admin-account-content__avatar-box">
-                    <?php if (!empty($acf_data['user_avatar'])) : ?>
-                        <?= wp_get_attachment_image($acf_data['user_avatar']['ID'], 'thumbnail', false, ['class' => 'img mb-3']); ?>
-                        <a href="#" class="button button--full mb-3">
-                            Zmień avatar
-                        </a>
-                        <a href="#" class="button button--full">
+    <h5 class="admin-account-content__title">
+        Podstawowe dane konta
+    </h5>
+    <div class="row">
+        <div class="col-24 col-md-8">
+            <div class="admin-account-content__avatar-box">
+                <?php if (!empty($acf_data['user_avatar'])) : ?>
+                    <?= wp_get_attachment_image($acf_data['user_avatar']['ID'], 'thumbnail', false, ['class' => 'img mb-3']); ?>
+                    <button class="button button--full mb-3 js-add-avatar">
+                        Zmień avatar
+                    </button>
+                    <form method="POST">
+                        <input type="hidden" name="remove_avatar" value="1">
+                        <button type="submit" class="button button--full">
                             Usuń avatar
-                        </a>
-                    <?php else : ?>
-                        <a href="#" class="button button--full">
-                            Dodaj avatar
-                        </a>
-                    <?php endif; ?>
-                </div>
+                        </button>
+                    </form>
+                <?php else : ?>
+                    <button class="button button--full js-add-avatar">
+                        Dodaj avatar
+                    </button>
+                <?php endif; ?>
+
+                <small class="mt-3">
+                    Akceptowane pliki: JPG
+                </small>
+
+                <form class="js-upload-avatar-form d-none" method="POST" enctype="multipart/form-data">
+                    <input type="file" name="avatar_file" id="js-file-avatar-file">
+                </form>
             </div>
-            <div class="col-24 col-md-16">
+        </div>
+        <div class="col-24 col-md-16">
+            <form id="js-admin-save-account">
                 <div class="form-group">
                     <label for="public_email" class="admin-account-content__label">
                         Publiczny adres e-mail

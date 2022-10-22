@@ -4,6 +4,7 @@ require_once 'custom-functions/security.php';
 
 // Custom Functions
 require_once 'custom-functions/functions.php';
+require_once 'custom-functions/avatar.php';
 
 // Custom Admin Menu
 require_once 'custom-menu/site-config.php';
@@ -22,3 +23,4 @@ require_once 'custom-post-type/painting.php';
 // AJAX
 require_once 'ajax/admin-save-account.php';
 require_once 'ajax/ajax-change-favourites.php';
+require_once 'ajax/ajax-change-painting.php';

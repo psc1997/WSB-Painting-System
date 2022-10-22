@@ -8,7 +8,7 @@
 ?>
 
 <section class="admin-paintings-content">
-    
+
     <h5 class="admin-paintings-content__title">
         Twoje obrazy
     </h5>
@@ -32,17 +32,17 @@
                 <div class="col-24 col-md-12 d-flex align-items-center justify-content-end">
 
                     <?php if ($painting->post_status === 'publish') : ?>
-                        <button class="button button--ghost mr-1">
-                            Ukryj
+                        <button class="button button--ghost mr-3 js-change-painting" data-id="<?= esc_attr($painting->ID); ?>" data-type="hide">
+                            <span class="icon icon-eye-hide"></span> Ukryj
                         </button>
                     <?php else : ?>
-                        <button class="button button--ghost mr-1">
-                            Opublikuj
+                        <button class="button button--ghost-green mr-3 js-change-painting" data-id="<?= esc_attr($painting->ID); ?>" data-type="publish">
+                        <span class="icon icon-eye"></span> Opublikuj
                         </button>
                     <?php endif; ?>
 
-                    <button class="button button--ghost mr-1">
-                        Edytuj
+                    <button class="button button--ghost mr-3">
+                        <span class="icon icon-edit"></span> Edytuj
                     </button>
 
                     <button class="button button">

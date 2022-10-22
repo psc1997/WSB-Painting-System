@@ -1,9 +1,8 @@
 import Typed from 'typed.js';
 
 /**
- * Funkcja odpowiada za wyświetlenie komunikatu o ciasteczkach.
+ * [...]
  *
- * @module CookieInfo
  * @version 1.0.0
  */
 export default function makeHomeWelcome () {

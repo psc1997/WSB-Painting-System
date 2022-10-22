@@ -5,24 +5,26 @@
  *
  * @version 1.0.0
  */
-export default function ajaxChangeFavourites () {
-    const $changeButton = $('.js-change-favourites');
+export default function ajaxChangePainting () {
+    const $changeButton = $('.js-change-painting');
 
     if (0 < $changeButton.length) {
         $changeButton.on('click', function (event) {
             event.preventDefault();
 
             const paintingId = $(this).attr('data-id'),
+                status = $(this).attr('data-type'),
                 button = $(this);
 
             $.ajax({
                 url: ajax.url,
                 type: 'post',
                 data: {
-                    action: 'change_favourites',
+                    action: 'change_painting',
                     security: ajax.nonce,
                     data: {
-                        paintingId: paintingId
+                        paintingId: paintingId,
+                        status: status
                     }
                 },
                 beforeSend: function () {

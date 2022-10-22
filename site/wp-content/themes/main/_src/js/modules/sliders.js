@@ -1,21 +1,11 @@
 import Swiper, {Navigation} from 'swiper';
 
 /**
- * Funkcja odpowiada za wyświetlenie komunikatu o ciasteczkach.
+ * Init dla wszystkich slider'ów.
  *
- * @module CookieInfo
  * @version 1.0.0
  */
 export default function makeSliders () {
-    makeHomelider();
-}
-
-/**
- * Funkcja tworzy slider na stronie głównej.
- *
- * @version 1.0.0
- */
-function makeHomelider () {
     Swiper.use([Navigation]);
 
     /* eslint-disable no-new */

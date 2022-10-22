@@ -2,7 +2,6 @@
  * Funkcja zarządzająca smooth scroll.
  * TODO: Refactor i porządek dla drugiej części funkcj!
  *
- * @module Smooth_Scroll
  * @version 2.0.0
  */
 export default function makeSmoothScrollLogic () {

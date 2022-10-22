@@ -6,7 +6,7 @@
     $paintings = get_posts([
         'post_type' => 'painting',
         'posts_per_page' => -1,
-        'post_status' => 'any',
+        'post_status' => 'publish',
         'include' => $favourites,
     ]);
 ?>
@@ -33,11 +33,11 @@
                     </p>
                 </div>
                 <div class="col-24 col-md-12 d-flex align-items-center justify-content-end">
-                    <a href="<?= esc_url(get_permalink($painting->ID)); ?>" class="button mr-2" target="_blank">
+                    <a href="<?= esc_url(get_permalink($painting->ID)); ?>" class="button mr-3" target="_blank">
                         Zobacz
                     </a>
                     <button class="button js-change-favourites" data-id="<?= esc_attr($painting->ID); ?>">
-                        <span class="icon icon-trash"></span>
+                        <span class="icon icon-heart-minus"></span>
                     </button>
                 </div>
             </div>
