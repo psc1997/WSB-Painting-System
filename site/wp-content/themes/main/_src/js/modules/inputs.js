@@ -6,6 +6,14 @@
  * @version 1.0.0
  */
 export default function makeInputs () {
+    $('.js-select2').select2({
+        placeholder: 'Wybierz jedną opcję'
+    });
+    $('.js-select2-multiple').select2({
+        multiple: true,
+        placeholder: 'Wybierz jedną lub kilka opcji'
+    });
+
     makeAvatarLogic();
 }
 

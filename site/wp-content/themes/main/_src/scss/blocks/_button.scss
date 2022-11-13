@@ -6,6 +6,7 @@
     color: $white;
     font-family: $second-font;
     font-weight: 600;
+    text-align: center;
     transition: all 0.25s;
 
     @include rfs(16px);
@@ -46,7 +47,6 @@
     &--full {
         display: inline-block;
         width: 100%;
-        text-align: center;
     }
 
     &--big {

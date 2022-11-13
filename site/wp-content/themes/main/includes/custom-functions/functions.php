@@ -115,23 +115,6 @@ function format_bytes(float $bytes, int $precision = 2): string
 }
 
 /**
- * Funkcja sprawdza, czy dane urządzenie jest dostępne do publicznego pokazania.
- *
- * @param integer $device_id - identyfikator urządzenia (ID wpisu)
- * @return boolean
- */
-function is_device_available(int $device_id): bool
-{
-    $device_collection_status = get_field('device_collection_status', $device_id);
-
-    if (!empty($device_collection_status['status']) && $device_collection_status['status'] === 'available') {
-        return true;
-    }
-
-    return false;
-}
-
-/**
  * Funkcja to znormalizowanie wp_kses pod treści WYSWIG.
  *
  * @param string $text - tekst, który ma zostać zabezpieczony
@@ -307,4 +290,26 @@ function esc_svg(string $svg_code): string
     ];
 
     return wp_kses($svg_code, $allowed_html, null);
+}
+
+/**
+ * Undocumented function
+ *
+ * @param string $message
+ * @return void
+ */
+function show_success(string $message)
+{
+    echo '<div class="alert admin__alert admin__alert--success">' . esc_html($message) . '</div>';
+}
+
+/**
+ * Undocumented function
+ *
+ * @param string $message
+ * @return void
+ */
+function show_error(string $message)
+{
+    echo '<div class="alert admin__alert admin__alert--error">' . esc_html($message) . '</div>';
 }

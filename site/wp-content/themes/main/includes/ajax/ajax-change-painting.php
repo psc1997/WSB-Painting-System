@@ -39,11 +39,25 @@ function change_painting()
     // =================================
     // = Walidujemy wprowadzone dane
     // =================================
+    $current_user_id = get_current_user_id();
+    $painting_id = (int)$data['paintingId'];
+    $post = get_post($painting_id);
+    $errors = [];
 
-    // ID obrazu
-    // if (!isset($data['paintingId']) || $data['paintingId']) {
-    //     $response['errors'][] = 'Opis nie może mieć więcej niż 600 znaków';
-    // }
+    // Czy user jest zalogowany? (jeżeli nie, to nie mógł technicznie nic edytować)
+    if (empty($current_user_id)) {
+        $errors[] = 'Błąd zalogowania użytkownika';
+    }
+
+    // Czy obraz istnieje
+    if (empty($post)) {
+        $errors[] = 'Podany obraz nie istnieje';
+    }
+
+    // Czy user jest właścicielem obrazu?
+    if (!empty($post) && $post->post_author !== $current_user_id) {
+        $errors[] = 'Nie jesteś właścicielem tego obrazu';
+    }
 
     // Jeśli były błędy to przestawiamy status na false.
     if (0 < sizeof($response['errors'])) {
@@ -54,22 +68,15 @@ function change_painting()
     // = Zapisujemy dane w panelu
     // =================================
     if ($response['status'] === null) {
-        $painting_id = (int)$data['paintingId'];
         $status = $data['status'];
 
         switch ($status) {
             case 'publish':
-                wp_update_post([
-                    'ID' => $painting_id,
-                    'post_status' => 'publish',
-                ]);
+                update_field('painting_sold', false, $painting_id);
                 break;
 
             case 'hide':
-                wp_update_post([
-                    'ID' => $painting_id,
-                    'post_status' => 'draft',
-                ]);
+                update_field('painting_sold', true, $painting_id);
                 break;
 
             default:

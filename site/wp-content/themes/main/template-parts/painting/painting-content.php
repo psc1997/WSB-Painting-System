@@ -59,6 +59,13 @@
                     <?= esc_html($post->post_title); ?>
                 </h1>
 
+                <?php if ($acf_data['painting_sold'] === true) : ?>
+                    <div class="painting-content__alert" role="alert">
+                        <strong>Ten obraz został już sprzedany!</strong><br>
+                        Sprawdź pozostałe obrazy tego artysty!
+                    </div>
+                <?php endif; ?>
+
                 <?php if (!empty($acf_data['painting_size']['height'] && !empty($acf_data['painting_size']['width']))) : ?>
                     <p class="painting-content__specification">
                         Rozmiar: <span><?= esc_html($acf_data['painting_size']['height']); ?> x <?= esc_html($acf_data['painting_size']['width']); ?> cm</span>

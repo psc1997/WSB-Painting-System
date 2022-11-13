@@ -31,7 +31,7 @@
                         <div class="swiper-button-next painting-others__slider-button painting-others__slider-button--next js-painting-more-slider-button-next"></div>
                     </div>
                     <div class="text-right">
-                        <a href="#" class="button button--ghost button--big">
+                        <a href="<?= esc_url(get_author_posts_url($post->post_author)); ?>" class="button button--ghost button--big">
                             Zobacz wszystko
                         </a>
                     </div>

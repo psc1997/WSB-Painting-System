@@ -5,6 +5,7 @@ require_once 'custom-functions/security.php';
 // Custom Functions
 require_once 'custom-functions/functions.php';
 require_once 'custom-functions/avatar.php';
+require_once 'custom-functions/paintings.php';
 
 // Custom Admin Menu
 require_once 'custom-menu/site-config.php';

@@ -27,4 +27,27 @@
             background-color: $first-color-0;
         }
     }
+
+    &__alert {
+        margin-bottom: 16px;
+        padding: 16px;
+        border: 1px solid $white;
+        border-radius: 0;
+        background-color: rgba($white, 0.03);
+        color: $white;
+        text-align: center;
+        font-weight: 500;
+
+        @include rfs(16px);
+
+        &--success {
+            border-color: $green;
+            background-color: rgba($green, 0.03);
+        }
+
+        &--error {
+            border-color: $first-color-0;
+            background-color: rgba($first-color-0, 0.03);
+        }
+    }
 }

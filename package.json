@@ -19,6 +19,7 @@
         "js-cookie": "^2.2.0",
         "lightbox2": "^2.11.1",
         "rfs": "^9.0.6",
+        "select2": "^4.1.0-rc.0",
         "sweetalert2": "^8.17.6",
         "swiper": "^8.4.2",
         "typed.js": "^2.0.12"

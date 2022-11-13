@@ -20,4 +20,75 @@
 
         @include rfs(18px);
     }
+
+    &__modal-content {
+        background: $dark-1;
+        border: 1px solid rgba($white, 0.25);
+        border-radius: 0;
+    }
+
+    &__modal-header {
+        background-color: $first-color-0;
+        border: 0;
+        border-radius: 0;
+    }
+
+    &__modal-title {
+        font-weight: 500;
+    }
+
+    &__modal-close {
+        color: $white;
+        opacity: initial !important;
+
+        &:hover {
+            color: $white;
+            
+            span {
+                transform: rotate(90deg);
+            }
+        }
+
+        span {
+            display: inline-block;
+            transition: transform 0.33s;
+        }
+    }
+
+    &__modal-label {
+        color: $white;
+        font-weight: 700;
+    }
+
+    &__modal-input {
+        border-radius: 0;
+        background-color: transparent;
+        color: $white !important;
+        transition:
+            padding-left 0.25s,
+            border-color 0.25s;
+
+        &::placeholder {
+            color: $second-color-0;
+        }
+
+        &.is-not-empty,
+        &:focus,
+        &:active {
+            box-shadow: unset;
+            background-color: transparent;
+            border-color: $first-color-0;
+        }
+
+        &--textarea {
+            resize: none;
+        }
+    }
+
+    &__modal-file-help {
+        padding: 16px;
+        background-color: $dark-2;
+
+        @include rfs(12px);
+    }
 }

@@ -10,7 +10,8 @@
 // Bootstrap configuration
 $grid-columns: 24;
 $grid-gutter-width: 16px;
-$modal-backdrop-bg: #000;
+$modal-backdrop-bg: $dark;
+$modal-backdrop-opacity: 0.95;
 
 $grid-breakpoints: (
     tn: 0,
@@ -54,7 +55,7 @@ $container-max-widths: (
 // @import '../../../../../../node_modules/bootstrap/scss/dropdown';
 // @import '../../../../../../node_modules/bootstrap/scss/button-group';
 @import '../../../../../../node_modules/bootstrap/scss/input-group';
-// @import '../../../../../../node_modules/bootstrap/scss/custom-forms';
+@import '../../../../../../node_modules/bootstrap/scss/custom-forms';
 @import '../../../../../../node_modules/bootstrap/scss/nav';
 @import '../../../../../../node_modules/bootstrap/scss/navbar';
 @import '../../../../../../node_modules/bootstrap/scss/card';

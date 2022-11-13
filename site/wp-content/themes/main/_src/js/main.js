@@ -1,6 +1,7 @@
 import 'popper.js';
 import 'bootstrap';
 import 'lightbox2';
+import 'select2';
 import Swal from 'sweetalert2';
 
 import ajaxChangeFavourites from './modules/ajax/ajax-change-favourites';
