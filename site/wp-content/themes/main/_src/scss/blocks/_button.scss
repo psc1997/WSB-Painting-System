@@ -44,6 +44,17 @@
         }
     }
 
+    &--ghost-grey {
+        color: $dark-2;
+        border-color: $dark-2;
+        background-color: transparent;
+
+        &:hover {
+            color: $white;
+            background-color: $dark-2;
+        }
+    }
+
     &--full {
         display: inline-block;
         width: 100%;

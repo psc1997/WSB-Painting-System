@@ -7,11 +7,17 @@
  */
 export default function makeInputs () {
     $('.js-select2').select2({
-        placeholder: 'Wybierz jedną opcję'
+        minimumResultsForSearch: -1,
+        placeholder: function () {
+            $(this).data('placeholder');
+        }
     });
+
     $('.js-select2-multiple').select2({
         multiple: true,
-        placeholder: 'Wybierz jedną lub kilka opcji'
+        placeholder: function () {
+            $(this).data('placeholder');
+        }
     });
 
     makeAvatarLogic();

@@ -48,7 +48,9 @@ function add_painting(): bool
     // Dodawanie nowego obrazu do biblioteki obrazów
     if (empty($errors)) {
         $path = trailingslashit(wp_upload_dir()['path']);
-        $path_with_file = $path . $_FILES['painting_file']['name'];
+        $extension = substr($_FILES['painting_file']['name'], strrpos($_FILES['painting_file']['name'], '.'));
+
+        $path_with_file = $path . 'painting_' . get_current_user_id() . '_' . time() . $extension;
 
         $is_uploaded = copy($_FILES['painting_file']['tmp_name'], $path_with_file);
 
@@ -58,7 +60,6 @@ function add_painting(): bool
                 'guid'           => wp_upload_dir()['url'] . '/' . basename($path_with_file),
                 'post_mime_type' => $_FILES['painting_file']['type'],
                 'post_title'     => preg_replace('/\.[^.]+$/', '', basename($path_with_file)),
-                // 'post_content'   => 'Avatar dla użytkownika "' . $current_user->user_login . '" (ID: ' . $user_id . ')',
                 'post_status'    => 'inherit',
             ], $path_with_file);
 
@@ -67,7 +68,6 @@ function add_painting(): bool
                 wp_update_attachment_metadata($attach_id, $attach_data);
             }
 
-            // Ustawiamy nowy avatar (ACF)
             if (!empty($attach_id)) {
                 $new_painting_id = wp_insert_post([
                     'post_type' => 'painting',
@@ -92,6 +92,69 @@ function add_painting(): bool
                 }
             }
         }
+    }
+
+    return false;
+}
+
+/**
+ * [...]
+ *
+ * @return bool
+ * @version 1.0.0
+ */
+function edit_painting(): bool
+{
+    // wp_verify_nonce('_wpnonce') || wp_send_json_error([
+    //     'message' => 'Błąd uwierzytelnena i autoryzacji nonce!<br>Spróbuj odświeżyć stronę!',
+    // ], 401);
+
+    $errors = [];
+
+    if (empty($_POST['painting_title'])) {
+        $errors[] = 'Dodawany obraz nie posiada tytułu';
+    } else {
+        if (strlen($_POST['painting_title']) < 3) {
+            $errors[] = 'Tytuł obrazu musi być dłuższy niż 3 znaki';
+        }
+    }
+
+    if (empty($_POST['painting_height'])) {
+        $errors[] = 'Brak wysokości obrazu';
+    }
+
+    if (empty($_POST['painting_width'])) {
+        $errors[] = 'Brak szerokości obrazu';
+    }
+
+    // Zwrotka błędów
+    if (!empty($errors)) {
+        foreach ($errors as $key => $error) {
+            show_error($error);
+        }
+    }
+
+    // Dodawanie nowego obrazu do biblioteki obrazów
+    if (empty($errors)) {
+        $painting_id = $_POST['painting_id'];
+
+        wp_update_post([
+            'ID' => $painting_id,
+            'post_title' => $_POST['painting_title'],
+        ]);
+
+        update_field('painting_size', [
+            'height' => $_POST['painting_height'],
+            'width' => $_POST['painting_width'],
+        ], $painting_id);
+        update_field('painting_description', $_POST['painting_description'], $painting_id);
+
+        wp_set_post_terms($painting_id, $_POST['painting_categories'], 'painting_category', false);
+        wp_set_post_terms($painting_id, $_POST['painting_type'], 'painting_type', false);
+
+        show_success('Pomyślnie zmieniono dane obrazu');
+
+        return true;
     }
 
     return false;

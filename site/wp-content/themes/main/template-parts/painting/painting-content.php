@@ -22,7 +22,7 @@
         <div class="row">
             <div class="col-24 col-md-11">
                 <div class="painting-content__image-box">
-                    <a href="<?= esc_url($acf_data['painting_image']['url']); ?>" data-lightbox="roadtrip">
+                    <a href="<?= esc_url($acf_data['painting_image']['url']); ?>" data-lightbox="painting">
                         <?= wp_get_attachment_image($acf_data['painting_image']['ID'], 'full', false, ['class' => 'img']); ?>
                     </a>
                 </div>
