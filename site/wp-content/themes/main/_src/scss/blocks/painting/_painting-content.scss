@@ -46,6 +46,10 @@
         }
     }
 
+    &__specification-link {
+        @include make-link-hover-line($first-color-0);
+    }
+
     &__breaker {
         display: inline-block;
         margin: 16px 0;

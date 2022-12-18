@@ -76,7 +76,7 @@
                     <p class="painting-content__specification">
                         Technika:
                         <?php foreach ($types as $key => $type) : ?>
-                            <a href="<?= esc_url(get_term_link($type->term_id, 'painting_type')); ?>" target="_blank"><?= esc_html($type->name); ?></a>
+                            <a href="<?= esc_url(get_term_link($type->term_id, 'painting_type')); ?>" target="_blank" class="painting-content__specification-link"><?= esc_html($type->name); ?></a>
                             <?= ($key < sizeof($types) - 1) ? ', ' : ''; ?>
                         <?php endforeach; ?>
                     </p>
@@ -86,7 +86,7 @@
                     <p class="painting-content__specification">
                         <?= 1 < sizeof($categories) ? 'Kategorie' : 'Kategoria'; ?>:
                         <?php foreach ($categories as $key => $category) : ?>
-                            <a href="<?= esc_url(get_term_link($category->term_id, 'painting_category')); ?>" target="_blank"><?= esc_html($category->name); ?></a>
+                            <a href="<?= esc_url(get_term_link($category->term_id, 'painting_category')); ?>" target="_blank" class="painting-content__specification-link"><?= esc_html($category->name); ?></a>
                             <?= ($key < sizeof($categories) - 1) ? ', ' : ''; ?>
                         <?php endforeach; ?>
                     </p>
@@ -107,7 +107,7 @@
                         Opis obrazu:
                     </h6>
                     <p class="painting-content__text">
-                        <?= esc_html($acf_data['painting_description']); ?>
+                        <?= esc_html(orphan($acf_data['painting_description'])); ?>
                     </p>
                 <?php endif; ?>
 
@@ -118,7 +118,7 @@
                         O artyście:
                     </h6>
                     <p class="painting-content__text">
-                        <?= esc_html($author_description); ?>
+                        <?= esc_html(orphan($author_description)); ?>
                     </p>
 
                     <?php if (!empty($author_link)) : ?>

@@ -3,7 +3,7 @@
     $image = get_field('painting_image', $painting->ID);
     $size = get_field('painting_size', $painting->ID);
     $types = wp_get_post_terms($painting->ID, 'painting_type', ['number' => 1]);
-    $categories = wp_get_post_terms($painting->ID, 'painting_category', ['number' => 1]);
+    $categories = wp_get_post_terms($painting->ID, 'painting_category');
     $author_id = $painting->post_author;
     $author_name = get_user_meta($author_id, 'nickname', true);
 
@@ -49,17 +49,16 @@
             ?>
         </div>
         <div class="card-footer">
-            <?php
-                if (!empty($categories)) :
-                foreach ($categories as $key => $category) :
-            ?>
+            <?php if (!empty($categories[0])) : ?>
                 <span class="item-painting__card-tag">
-                    <?= esc_html($category->name); ?>
+                    <?= esc_html($categories[0]->name); ?>
                 </span>
-            <?php
-                endforeach;
-                endif;
-            ?>
+            <?php endif; ?>
+            <?php if (!empty($categories[1])) : ?>
+                <span class="item-painting__card-tag">
+                    + <?= esc_html(sizeof($categories) - 1); ?> więcej
+                </span>
+            <?php endif; ?>
         </div>
     </a>
 </div>

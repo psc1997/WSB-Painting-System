@@ -3,12 +3,14 @@
 
     $favourites = get_field('user_favourites', 'user_' . $current_user_id);
 
-    $paintings = get_posts([
-        'post_type' => 'painting',
-        'posts_per_page' => -1,
-        'post_status' => 'publish',
-        'include' => $favourites,
-    ]);
+    if (!empty($favourites)) {
+        $paintings = get_posts([
+            'post_type' => 'painting',
+            'posts_per_page' => -1,
+            'post_status' => 'publish',
+            'include' => $favourites,
+        ]);
+    }
 ?>
 
 <section class="admin-paintings-content">
@@ -44,6 +46,12 @@
         </div>
     <?php
         endforeach;
+        else :
+    ?>
+        <div class="alert admin__alert admin__alert--error">
+            Nie masz jeszcze żadnych ulubionych obrazów.
+        </div>
+    <?php
         endif;
     ?>
 </section>

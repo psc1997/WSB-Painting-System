@@ -11,6 +11,7 @@
         remove_avatar_file($current_user_id);
     }
 
+    $nickname = get_user_meta($current_user_id, 'nickname', true);
     $description = get_user_meta($current_user_id, 'description', true);
     $social_media = [
         'facebook'  => get_user_meta($current_user_id, 'facebook', true),
@@ -60,10 +61,19 @@
         <div class="col-24 col-md-16">
             <form id="js-admin-save-account">
                 <div class="form-group">
+                    <label for="public_nickname" class="admin-account-content__label">
+                        Nazwa twórcy
+                    </label>
+                    <input type="mail" class="form-control admin-account-content__input" name="public_nickname" id="public_nickname" aria-describedby="public_nickname_help" value="<?= (!empty($nickname)) ? esc_attr($nickname) : ''; ?>">
+                    <small id="public_nickname_help" class="form-text text-muted">
+                        Wyświetlana będzie pod Twoimi obrazami.
+                    </small>
+                </div>
+                <div class="form-group">
                     <label for="public_email" class="admin-account-content__label">
                         Publiczny adres e-mail
                     </label>
-                    <input type="mail" class="form-control admin-account-content__input" name="public_email" id="public_email" aria-describedby="public_email_help" placeholder="user@internet.com" value="<?= (!empty($acf_data['user_public_email'])) ? esc_attr($acf_data['user_public_email']) : ''; ?>">
+                    <input type="mail" class="form-control admin-account-content__input" name="public_email" id="public_email" aria-describedby="public_email_help" value="<?= (!empty($acf_data['user_public_email'])) ? esc_attr($acf_data['user_public_email']) : ''; ?>">
                     <small id="public_email_help" class="form-text text-muted">
                         Adres e-mail, który wyświetlany będzie na przycisku "Wyślij wiadomość" widocznym na Twoim profilu
                     </small>

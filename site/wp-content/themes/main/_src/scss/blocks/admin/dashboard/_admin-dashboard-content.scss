@@ -4,13 +4,8 @@
 
         a {
             color: $first-color-0;
-            border-bottom: 1px solid transparent;
-            transition: border-color 0.25s;
-
-            &:hover {
-                border-color: $first-color-0;
-                text-decoration: none;
-            }
+            
+            @include make-link-hover-line($first-color-0);
         }
     }
 }

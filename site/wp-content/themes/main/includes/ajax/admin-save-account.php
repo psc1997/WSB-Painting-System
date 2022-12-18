@@ -39,17 +39,26 @@ function admin_save_account()
     // = Walidujemy wprowadzone dane
     // =================================
 
+    // Nazwa użytkownika
+    if (!empty($data['public_nickname'])) {
+        if (strlen($data['public_nickname']) < 5) {
+            $response['errors'][] = 'Nazwa użytkownika musi mieć przynajmniej 5 znaków';
+        }
+    }
+
     // Adres e-mail
-    if (strlen($data['public_email']) < 2) {
-        $response['errors'][] = 'Adres e-mail musi mieć przynajmniej dwa znaki';
+    if (strlen($data['public_email']) < 5) {
+        $response['errors'][] = 'Adres e-mail musi mieć przynajmniej 5 znaków';
     }
     if (!filter_var($data['public_email'], FILTER_VALIDATE_EMAIL)) {
         $response['errors'][] = 'Wprowadzony adres email jest nieprawidłowy';
     }
 
     // Wiadomość
-    if (isset($data['description']) && 600 < strlen($data['description'])) {
-        $response['errors'][] = 'Opis nie może mieć więcej niż 600 znaków';
+    if (!empty($data['description'])) {
+        if (600 < strlen($data['description'])) {
+            $response['errors'][] = 'Opis nie może mieć więcej niż 600 znaków';
+        }
     }
 
     // Jeśli były błędy to przestawiamy status na false.
@@ -64,6 +73,7 @@ function admin_save_account()
         $current_user_id = get_current_user_id();
 
         update_field('user_public_email', $data['public_email'], 'user_' . $current_user_id);
+        update_user_meta($current_user_id, 'nickname', $data['public_nickname']);
         update_user_meta($current_user_id, 'description', $data['description']);
 
         update_user_meta($current_user_id, 'facebook', $data['facebook']);

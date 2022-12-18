@@ -15,6 +15,7 @@
         color: $first-color-0;
         background-color: transparent;
         text-decoration: none;
+        cursor: pointer;
     }
 
     &:disabled {
@@ -70,8 +71,8 @@
 
     &--facebook {
         background-color: transparent;
-        border-color: rgba(#4267b2, 0.5);
-        color: rgba(#4267b2, 0.75);
+        border-color: rgba(#4267b2, 0.75);
+        color: #4267b2;
 
         &:hover {
             background-color: #4267b2;
@@ -81,8 +82,8 @@
 
     &--instagram {
         background-color: transparent;
-        border-color: rgba(#833ab4, 0.5);
-        color: rgba(#833ab4, 0.75);
+        border-color: rgba(#833ab4, 0.75);
+        color: #833ab4;
 
         &:hover {
             background-color: #833ab4;
@@ -92,8 +93,8 @@
 
     &--pinterest {
         background-color: transparent;
-        border-color: rgba(#e60023, 0.5);
-        color: rgba(#e60023, 0.75);
+        border-color: rgba(#e60023, 0.75);
+        color: #e60023;
 
         &:hover {
             background-color: #e60023;
@@ -103,8 +104,8 @@
 
     &--tumblr {
         background-color: transparent;
-        border-color: rgba(#35465c, 0.5);
-        color: rgba(#35465c, 0.75);
+        border-color: rgba(#35465c, 0.75);
+        color: #35465c;
 
         &:hover {
             background-color: #35465c;
@@ -114,8 +115,8 @@
 
     &--youtube {
         background-color: transparent;
-        border-color: rgba(#ff0000, 0.5);
-        color: rgba(#ff0000, 0.75);
+        border-color: rgba(#ff0000, 0.75);
+        color: #ff0000;
 
         &:hover {
             background-color: #ff0000;
@@ -125,8 +126,8 @@
 
     &--wikipedia {
         background-color: transparent;
-        border-color: rgba(#c7c8ca, 0.5);
-        color: rgba(#c7c8ca, 0.75);
+        border-color: rgba(#c7c8ca, 0.75);
+        color: #c7c8ca;
 
         &:hover {
             background-color: #c7c8ca;

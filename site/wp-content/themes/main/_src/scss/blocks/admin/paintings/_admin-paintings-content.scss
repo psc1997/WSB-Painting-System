@@ -85,6 +85,13 @@
         }
     }
 
+    &__modal-input-group-text {
+        background-color: $second-color-0;
+        border: 1px solid $second-color-0;
+        border-radius: 0;
+        color: $white;
+    }
+
     &__modal-file-help {
         padding: 16px;
         background-color: $dark-2;

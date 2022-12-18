@@ -79,7 +79,7 @@
                                 <div class="input-group">
                                     <input type="number" class="form-control admin-paintings-content__modal-input" name="painting_height" min="0" aria-label="Painting height" aria-describedby="painting_height" required>
                                     <div class="input-group-append">
-                                        <span class="input-group-text" id="painting_height">
+                                        <span class="input-group-text admin-paintings-content__modal-input-group-text" id="painting_height">
                                             cm
                                         </span>
                                     </div>
@@ -92,7 +92,7 @@
                                 <div class="input-group">
                                     <input type="number" class="form-control admin-paintings-content__modal-input" name="painting_width" min="0" aria-label="Painting width" aria-describedby="painting_width" required>
                                     <div class="input-group-append">
-                                        <span class="input-group-text" id="painting_width">
+                                        <span class="input-group-text admin-paintings-content__modal-input-group-text" id="painting_width">
                                             cm
                                         </span>
                                     </div>
@@ -178,16 +178,22 @@
         if (!empty($paintings)) :
         foreach ($paintings as $key => $painting) :
             $acf_data = get_fields($painting->ID);
-            $item_painting_categories = get_the_terms($painting->ID, 'painting_category');
+
             $item_painting_types = get_the_terms($painting->ID, 'painting_type');
 
-            $item_painting_types = array_map(static function (object $element): int {
-                return $element->term_id;
-            }, $item_painting_types);
+            if (!empty($item_painting_types)) {
+                $item_painting_types = array_map(static function (object $element): int {
+                    return $element->term_id;
+                }, $item_painting_types);
+            }
 
-            $item_painting_categories = array_map(static function (object $element): int {
-                return $element->term_id;
-            }, $item_painting_categories);
+            $item_painting_categories = get_the_terms($painting->ID, 'painting_category');
+
+            if (!empty($item_painting_categories)) {
+                $item_painting_categories = array_map(static function (object $element): int {
+                    return $element->term_id;
+                }, $item_painting_categories);
+            }
     ?>
         <div class="admin-paintings-content__item">
             <div class="row">
@@ -274,7 +280,7 @@
                                     <div class="input-group">
                                         <input type="number" class="form-control admin-paintings-content__modal-input" name="painting_height" min="0" aria-label="Painting height" aria-describedby="painting_height" value="<?= esc_attr($acf_data['painting_size']['height']); ?>" required>
                                         <div class="input-group-append">
-                                            <span class="input-group-text" id="painting_height">
+                                            <span class="input-group-text admin-paintings-content__modal-input-group-text" id="painting_height">
                                                 cm
                                             </span>
                                         </div>
@@ -287,7 +293,7 @@
                                     <div class="input-group">
                                         <input type="number" class="form-control admin-paintings-content__modal-input" name="painting_width" min="0" aria-label="Painting width" aria-describedby="painting_width" value="<?= esc_attr($acf_data['painting_size']['width']); ?>" required>
                                         <div class="input-group-append">
-                                            <span class="input-group-text" id="painting_width">
+                                            <span class="input-group-text admin-paintings-content__modal-input-group-text" id="painting_width">
                                                 cm
                                             </span>
                                         </div>
@@ -298,9 +304,9 @@
                                 <label for="painting_categories" class="admin-paintings-content__modal-label">
                                     Kategorie obrazu
                                 </label>
-                                <?php var_dump($item_painting_categories); ?>
                                 <select class="form-control js-select2-multiple" name="painting_categories[]" data-placeholder="Wybierz minimum jedną wartość">
                                     <?php foreach ($painting_categories as $key => $category) : ?>
+                                        <?php // TODO: Zaznaczanie multi-select nie działa prawidłowo! ?>
                                         <option value="<?= esc_attr($category->term_id); ?>" <?= (in_array($category->term_id, $item_painting_categories)) ? 'selected' : ''; ?>>
                                             <?= esc_html($category->name); ?>
                                         </option>
@@ -339,6 +345,12 @@
         </div>
     <?php
         endforeach;
+        else :
+    ?>
+        <div class="alert admin__alert admin__alert--error mt-3">
+            Nie dodano żadnego obrazu
+        </div>
+    <?php
         endif;
     ?>
 </section>

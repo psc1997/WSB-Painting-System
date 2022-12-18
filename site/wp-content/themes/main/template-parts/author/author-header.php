@@ -38,7 +38,7 @@
                         O artyście:
                     </h6>
                     <p class="author-header__text">
-                        <?= esc_html($description); ?>
+                        <?= esc_html(orphan($description)); ?>
                     </p>
                 <?php endif; ?>
 
@@ -60,7 +60,7 @@
                     </div>
 
                     <?php if (!empty($acf_data['user_public_email'])) : ?>
-                        <a href="mailto:<?= esc_attr(antispambot($acf_data['user_public_email'])); ?>" class="button button ml-auto">
+                        <a href="mailto:<?= esc_attr(antispambot($acf_data['user_public_email'])); ?>" class="button button--ghost ml-auto">
                             <span class="icon icon-mail mr-2"></span> Napisz wiadomość
                         </a>
                     <?php endif; ?>

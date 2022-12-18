@@ -27,13 +27,21 @@
                                 <?php endforeach; ?>
                             </div>
                         </div>
-                        <div class="swiper-button-prev painting-others__slider-button painting-others__slider-button--prev js-painting-more-slider-button-prev"></div>
-                        <div class="swiper-button-next painting-others__slider-button painting-others__slider-button--next js-painting-more-slider-button-next"></div>
                     </div>
-                    <div class="text-right">
-                        <a href="<?= esc_url(get_author_posts_url($post->post_author)); ?>" class="button button--ghost button--big">
-                            Zobacz wszystko
-                        </a>
+                    <div class="row">
+                        <div class="col-24 col-lg-12">
+                            <div class="painting-others__slider-button js-painting-more-slider-button-prev">
+                                Poprzedni
+                            </div>
+                            <div class="painting-others__slider-button js-painting-more-slider-button-next ml-3">
+                                Następny
+                            </div>
+                        </div>
+                        <div class="col-24 col-lg-12 text-right">
+                            <a href="<?= esc_url(get_author_posts_url($post->post_author)); ?>" class="button button--ghost button--big">
+                                Zobacz wszystko
+                            </a>  
+                        </div>
                     </div>
                 </div>
             </div>

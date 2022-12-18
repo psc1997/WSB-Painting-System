@@ -24,42 +24,17 @@
     }
 
     &__slider-button {
-        height: 80px;
-        width: 80px;
-        background-color: rgba($dark-1, 0.75);
-        border: 2px solid $first-color-0;
-        color: $first-color-0;
-        opacity: 0.75;
-        transition:
-            background-color 0.25s,
-            color 0.25s,
-            opacity 0.25s;
+        @extend .button;
+        @extend .button--ghost;
+        @extend .button--big;
+
+        &::after {
+            display: none;
+        }
 
         &.swiper-button-disabled {
             pointer-events: none !important;
-            opacity: 0;
-        }
-
-        &:hover {
-            color: $white;
-            background-color: rgba($first-color-0, 0.85);
-            opacity: 1;
-        }
-
-        &--prev {
-            left: -60px;
-
-            @include icon('arrow-right-long', 'after');
-
-            &::after {
-                transform: rotate(180deg)
-            }
-        }
-
-        &--next {
-            right: -60px;
-
-            @include icon('arrow-right-long', 'after');
+            opacity: 0.5;
         }
     }
 }
