@@ -1,12 +1,12 @@
 .home-paintings {
     background-color: $dark;
-    padding: 60px 0;
+    padding-bottom: 80px;
 
     &__title {
         display: inline-block;
         width: 100%;
         padding: 36px 48px;
-        border: 2px solid rgba($white, 0.5);
+        border: 1px solid rgba($white, 0.25);
         margin-bottom: 36px;
         color: $white;
         font-family: $second-font;

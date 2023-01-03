@@ -23,7 +23,7 @@
             <div class="row">
                 <div class="col-24">
                     <nav class="navbar navbar-expand-sm header__navbar">
-                        <a href="<?= esc_url(get_home_url()); ?>" class="navbar-brand">
+                        <a href="<?= esc_url(get_home_url()); ?>" class="navbar-brand p-0">
                             <img src="<?= esc_url(get_template_directory_uri()); ?>/dist/img/logo.svg" alt="Paint IT" class="header__logo">
                         </a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader"
@@ -44,7 +44,7 @@
                                     <li class="nav-item header__nav-item">
                                         <a href="<?= esc_url($dashboard); ?>" class="nav-link header__nav-link">
                                             <span class="icon icon-settings"></span><br>
-                                            Ustawienia
+                                            Panel zarządzania
                                         </a>
                                     </li>
                                     <li class="nav-item header__nav-item">

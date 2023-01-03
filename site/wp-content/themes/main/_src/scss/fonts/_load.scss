@@ -7,9 +7,5 @@
  */
 
 // Raleway
-@include font-face('Raleway', '../fonts/Raleway/Raleway-Regular', 400, normal, ttf);
-@include font-face('Raleway', '../fonts/Raleway/Raleway-Bold', 700, normal, ttf);
-
-// PlayfairDisplay
-@include font-face('PlayfairDisplay', '../fonts/PlayfairDisplay/PlayfairDisplay-Regular', 400, normal, ttf);
-@include font-face('PlayfairDisplay', '../fonts/PlayfairDisplay/PlayfairDisplay-Bold', 700, normal, ttf);
+// PlayFair Display
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@400;500;700&display=swap');

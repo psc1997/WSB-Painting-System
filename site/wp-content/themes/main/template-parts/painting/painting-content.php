@@ -59,13 +59,6 @@
                     <?= esc_html($post->post_title); ?>
                 </h1>
 
-                <?php if ($acf_data['painting_sold'] === true) : ?>
-                    <div class="painting-content__alert" role="alert">
-                        <strong>Ten obraz został już sprzedany!</strong><br>
-                        Sprawdź pozostałe obrazy tego artysty!
-                    </div>
-                <?php endif; ?>
-
                 <?php if (!empty($acf_data['painting_size']['height'] && !empty($acf_data['painting_size']['width']))) : ?>
                     <p class="painting-content__specification">
                         Rozmiar: <span><?= esc_html($acf_data['painting_size']['height']); ?> x <?= esc_html($acf_data['painting_size']['width']); ?> cm</span>
@@ -92,6 +85,13 @@
                     </p>
                 <?php endif; ?>
 
+                <?php if ($acf_data['painting_sold'] === true) : ?>
+                    <div class="painting-content__alert" role="alert">
+                        <strong>Ten obraz został już sprzedany!</strong><br/>
+                        Sprawdź pozostałe obrazy tego artysty!
+                    </div>
+                <?php endif; ?>
+
                 <?php if (!empty($author_link)) : ?>
                     <div class="text-right">
                         <a href="<?= esc_url($author_link); ?>" class="button">
@@ -104,7 +104,7 @@
                     <hr class="painting-content__breaker">
 
                     <h6 class="painting-content__title-text">
-                        Opis obrazu:
+                        Opis obrazu
                     </h6>
                     <p class="painting-content__text">
                         <?= esc_html(orphan($acf_data['painting_description'])); ?>
@@ -115,7 +115,7 @@
                     <hr class="painting-content__breaker">
 
                     <h6 class="painting-content__title-text">
-                        O artyście:
+                        O artyście
                     </h6>
                     <p class="painting-content__text">
                         <?= esc_html(orphan($author_description)); ?>

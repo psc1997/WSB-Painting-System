@@ -1,5 +1,5 @@
 .home-categories {
-    padding: 60px 0;
+    padding: 60px 0 120px 0;
     background-color: $dark;
 
     &__menu {
@@ -19,14 +19,14 @@
         border: 1px solid transparent;
         color: $white;
         font-family: $second-font;
-        font-weight: 600;
+        font-weight: 500;
         transition: border-color 0.25s;
 
         @include rfs(18px);
 
         &:hover {
             color: $white;
-            border-color: $white;
+            border-color: rgba($white, 0.75);
             text-decoration: none;
         }
     }

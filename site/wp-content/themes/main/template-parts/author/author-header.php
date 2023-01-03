@@ -35,7 +35,7 @@
                     <hr class="author-header__breaker">
 
                     <h6 class="author-header__title-text">
-                        O artyście:
+                        O artyście
                     </h6>
                     <p class="author-header__text">
                         <?= esc_html(orphan($description)); ?>
@@ -50,7 +50,7 @@
                             foreach ($social_media as $key => $social) :
                                 if (!empty($social)) :
                                 ?>
-                                    <a href="<?= esc_url($social); ?>" target="_blank" rel="noopener noreferrer" class="button button--<?= esc_attr($key); ?>">
+                                    <a href="<?= esc_url($social); ?>" target="_blank" rel="noopener noreferrer" class="button button--social-square button--<?= esc_attr($key); ?> mr-1">
                                         <span class="icon icon-social-<?= esc_attr($key); ?>"></span>
                                     </a>
                                 <?php

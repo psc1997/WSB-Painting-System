@@ -5,7 +5,7 @@
     background-color: $first-color-0;
     color: $white;
     font-family: $second-font;
-    font-weight: 600;
+    font-weight: 700;
     text-align: center;
     transition: all 0.25s;
 
@@ -69,67 +69,65 @@
         padding: 4px 8px;
     }
 
-    &--facebook {
+    &--social-square {
+        display: inline-flex;
+        height: 42px;
+        width: 42px;
+        justify-content: center;
+        align-items: center;
+        color: $first-color-0;
+        border-color: $first-color-0;
         background-color: transparent;
-        border-color: rgba(#4267b2, 0.75);
-        color: #4267b2;
 
+        span {
+            font-size: 18px;
+        }
+    }
+
+    &--facebook {
         &:hover {
+            border-color: #4267b2;
+            border-color: #4267b2;
             background-color: #4267b2;
             color: $white;
         }
     }
 
     &--instagram {
-        background-color: transparent;
-        border-color: rgba(#833ab4, 0.75);
-        color: #833ab4;
-
         &:hover {
+            border-color: #833ab4;
             background-color: #833ab4;
             color: $white;
         }
     }
 
     &--pinterest {
-        background-color: transparent;
-        border-color: rgba(#e60023, 0.75);
-        color: #e60023;
-
         &:hover {
+            border-color: #e60023;
             background-color: #e60023;
             color: $white;
         }
     }
 
     &--tumblr {
-        background-color: transparent;
-        border-color: rgba(#35465c, 0.75);
-        color: #35465c;
-
         &:hover {
+            border-color: #35465c;
             background-color: #35465c;
             color: $white;
         }
     }
 
     &--youtube {
-        background-color: transparent;
-        border-color: rgba(#ff0000, 0.75);
-        color: #ff0000;
-
         &:hover {
+            border-color: #ff0000;
             background-color: #ff0000;
             color: $white;
         }
     }
 
     &--wikipedia {
-        background-color: transparent;
-        border-color: rgba(#c7c8ca, 0.75);
-        color: #c7c8ca;
-
         &:hover {
+            border-color: #c7c8ca;
             background-color: #c7c8ca;
             color: $white;
         }
