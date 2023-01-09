@@ -21,7 +21,7 @@ function add_user_avatar(array $image)
     }
 
     if (!empty($errors)) {
-        return $errors;
+        echo implode($errors);
     }
 
     if (!empty($current_user_id)) {

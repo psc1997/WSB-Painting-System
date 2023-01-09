@@ -47,6 +47,10 @@
         span {
             color: rgba($white, 0.75);
         }
+
+        &--red {
+            color: $first-color-0 !important;
+        }
     }
 
     &__specification-link {

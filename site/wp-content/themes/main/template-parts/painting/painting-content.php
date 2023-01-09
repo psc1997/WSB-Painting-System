@@ -8,6 +8,7 @@
     $author_name = get_user_meta($author_id, 'nickname', true);
     $author_description = get_user_meta($author_id, 'description', true);
     $author_link = get_author_posts_url($author_id);
+    $author_contact_email = get_field('user_public_email', 'user_' . $author_id);
 
     // Sprawdzamy stan ulubionych
     $current_user_id = get_current_user_id();
@@ -39,7 +40,7 @@
                     <div class="col-12 text-right">
                         <?php if (!empty($current_user_id)) : ?>
                             <?php if (in_array($post->ID, $favourites, true)) : ?>
-                                <button class="button js-change-favourites" data-id="<?= esc_attr($post->ID); ?>">
+                                <button class="button button--square js-change-favourites" data-id="<?= esc_attr($post->ID); ?>">
                                     <span class="icon icon-heart-full"></span>
                                 </button>
                             <?php else : ?>
@@ -85,6 +86,10 @@
                     </p>
                 <?php endif; ?>
 
+                <p class="painting-content__specification">
+                    Cena: <span class="painting-content__specification painting-content__specification--red">300 PLN</span>
+                </p>
+
                 <?php if ($acf_data['painting_sold'] === true) : ?>
                     <div class="painting-content__alert" role="alert">
                         <strong>Ten obraz został już sprzedany!</strong><br/>
@@ -92,9 +97,9 @@
                     </div>
                 <?php endif; ?>
 
-                <?php if (!empty($author_link)) : ?>
+                <?php if (!empty($author_contact_email)) : ?>
                     <div class="text-right">
-                        <a href="<?= esc_url($author_link); ?>" class="button">
+                        <a href="mailto:<?= esc_attr($author_contact_email); ?>" class="button">
                             Skontaktuj się z artystą
                         </a>
                     </div>

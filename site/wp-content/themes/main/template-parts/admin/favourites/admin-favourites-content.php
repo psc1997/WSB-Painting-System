@@ -38,7 +38,7 @@
                     <a href="<?= esc_url(get_permalink($painting->ID)); ?>" class="button mr-3" target="_blank">
                         Zobacz
                     </a>
-                    <button class="button js-change-favourites" data-id="<?= esc_attr($painting->ID); ?>">
+                    <button class="button button--square js-change-favourites" data-id="<?= esc_attr($painting->ID); ?>">
                         <span class="icon icon-heart-minus"></span>
                     </button>
                 </div>

@@ -13,7 +13,7 @@
                         <div class="admin-login-content__form text-center">
                             <?php wp_login_form(); ?>
                             <hr>
-                            <p>
+                            <p class="admin-login-content__form-text">
                                 Nie masz jeszcze konta? <a href="#" class="admin-login-content__link">Zarejestruj się!</a>
                             </p>
                         </div>

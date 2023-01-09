@@ -54,7 +54,7 @@
                 </small>
 
                 <form class="js-upload-avatar-form d-none" method="POST" enctype="multipart/form-data">
-                    <input type="file" name="avatar_file" id="js-file-avatar-file">
+                    <input type="file" name="avatar_file" id="js-file-avatar-file" accept="image/jpeg">
                 </form>
             </div>
         </div>
