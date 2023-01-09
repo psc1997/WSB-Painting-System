@@ -40,17 +40,17 @@
                     <div class="col-12 text-right">
                         <?php if (!empty($current_user_id)) : ?>
                             <?php if (in_array($post->ID, $favourites, true)) : ?>
-                                <button class="button button--square js-change-favourites" data-id="<?= esc_attr($post->ID); ?>">
-                                    <span class="icon icon-heart-full"></span>
+                                <button class="button button--ghost button--social-square js-change-favourites" data-id="<?= esc_attr($post->ID); ?>">
+                                    <span class="icon icon-heart-full mt-auto" style="line-height: 1;"></span>
                                 </button>
                             <?php else : ?>
-                                <button class="button button--ghost js-change-favourites" data-id="<?= esc_attr($post->ID); ?>">
-                                    <span class="icon icon-heart-empty"></span>
+                                <button class="button button--ghost button--social-square js-change-favourites" data-id="<?= esc_attr($post->ID); ?>">
+                                    <span class="icon icon-heart-empty mt-auto" style="line-height: 1;"></span>
                                 </button>
                             <?php endif; ?>
                         <?php else : ?>
-                            <button type="button" class="button button--ghost" data-toggle="tooltip" data-placement="left" title="Zaloguj się, aby dodać obraz do ulubionych!">
-                                <span class="icon icon-heart-empty"></span>
+                            <button type="button" class="button button--ghost button--social-square" data-toggle="tooltip" data-placement="left" title="Zaloguj się, aby dodać obraz do ulubionych!">
+                                <span class="icon icon-heart-empty mt-auto" style="line-height: 1;"></span>
                             </button>
                         <?php endif; ?>
                     </div>
